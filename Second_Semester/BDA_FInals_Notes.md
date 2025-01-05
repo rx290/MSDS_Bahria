@@ -77,7 +77,7 @@
 
 ### Hadoop Architecture
 
-    ![alt text](image-4.png)
+    ![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-4.png)
 
      Master-Slave Architecture in Hadoop
 
@@ -91,7 +91,7 @@
 
 ### Hadoop Ecosystem
 
-    ![alt text](EcoSystem.png)
+    ![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image.png)
 
         Hadoop ecosystem includes tools and technologies that integrate with Hadoop for data processing, analytics, and management.
 
@@ -142,7 +142,7 @@
     - Limited scalability
     - Prone to single-point failures
 
-    ![alt text](image-1.png)
+    ![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-1.png)
 
 ### HDFS
 
@@ -167,11 +167,11 @@
 
     In summary, HDFS is a distributed file system designed for large-scale data storage and processing, while traditional file systems are suitable for smaller-scale data storage and retrieval.
 
-    ![alt text](image-2.png)
+    ![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-2.png)
 
 ### HDFS Architecture
 
-    ![alt text](image-3.png)
+    ![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-3.png)
 
     HDFS Components
 
@@ -502,9 +502,9 @@
 
 ### Hbase Architecture
 
-    ![alt text](image-5.png)
+    ![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-5.png)
 
-    ![alt text](image-6.png)
+    ![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-6.png)
 
     HBase's architecture consists of the following components:
 
