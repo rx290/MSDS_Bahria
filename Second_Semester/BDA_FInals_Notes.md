@@ -77,7 +77,7 @@
 
 ### Hadoop Architecture
 
-    ![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-4.png)
+    ![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-4.png?raw=true)
 
      Master-Slave Architecture in Hadoop
 
