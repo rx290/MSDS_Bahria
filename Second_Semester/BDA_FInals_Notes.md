@@ -91,7 +91,7 @@
 
 ### Hadoop Ecosystem
 
-![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image.png)
+![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image.png?raw=true)
 
         Hadoop ecosystem includes tools and technologies that integrate with Hadoop for data processing, analytics, and management.
 
@@ -142,7 +142,7 @@
     - Limited scalability
     - Prone to single-point failures
 
-![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-1.png)
+![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-1.png?raw=true)
 
 ### HDFS
 
@@ -167,11 +167,11 @@
 
     In summary, HDFS is a distributed file system designed for large-scale data storage and processing, while traditional file systems are suitable for smaller-scale data storage and retrieval.
 
-![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-2.png)
+![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-2.png?raw=true)
 
 ### HDFS Architecture
 
-![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-3.png)
+![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-3.png?raw=true)
 
     HDFS Components
 
@@ -502,9 +502,9 @@
 
 ### Hbase Architecture
 
-![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-5.png)
+![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-5.png?raw=true)
 
-![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-6.png)
+![alt text](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/image-6.png?raw=true)
 
     HBase's architecture consists of the following components:
 
@@ -871,14 +871,76 @@
     21. Eventual Consistency: Allows for temporary inconsistencies, but ensures that nodes will eventually converge to the same data values.
     22. Causal Consistency: Ensures that causal relationships between operations are preserved.
 
-## Association Rule
+## Association Rules
 
-### Support
+    Imagine you have a toy store. You want to know what toys kids usually buy together.
 
-### Confidence
+### Formulas
 
-### Lift
+#### Support
 
-### The Market-Basket Model
+    Support = (Number of transactions with both items) / (Total number of transactions)
+
+    Example: If 10 kids buy both toy cars and toy tracks out of 100 kids, support is 10/100 = 0.1.
+
+#### Confidence
+
+    Confidence = (Number of transactions with both items) / (Number of transactions with the first item)
+
+    Example: If 10 kids buy both toy cars and toy tracks, and 20 kids buy toy cars, confidence is 10/20 = 0.5.
+
+#### Lift
+
+    Lift = Confidence / (Support of the second item)
+
+    Example: If confidence is 0.5 and support of toy tracks is 0.2, lift is 0.5/0.2 = 2.5.
+
+#### Market-Basket Model
+
+    A market-basket model is like a shopping cart. It shows what items are usually bought together.
 
 ### Apriori Algo
+
+    The APriori algorithm is like a smart shopping assistant. It finds patterns in shopping data to suggest what items are likely to be bought together.
+
+    Here's how it works:
+
+    1. Find frequent items (items that appear often).
+    2. Combine frequent items to find frequent pairs.
+    3. Use frequent pairs to find frequent triplets, and so on.
+    4. Stop when no more frequent patterns are found.
+
+### Complete Example
+
+    A supermarket wants to analyze its sales data to identify patterns in customer purchases. The supermarket has the following sales data:
+
+    | Transaction ID | Items Purchased         |
+    | -------------  | ----------------------- |
+    |        1       |    Milk, Bread, Eggs    |
+    |        2       |    Bread, Eggs, Cheese  |
+    |        3       |    Milk, Bread, Cheese  |
+    |        4       |    Eggs, Cheese, Yogurt |
+    |        5       |    Milk, Bread, Eggs    |
+
+    Using the APriori algorithm, the supermarket identifies the following frequent itemsets:
+
+    - {Bread, Eggs} (appears in 3 transactions)
+    - {Milk, Bread} (appears in 3 transactions)
+    - {Bread, Eggs, Cheese} (appears in 2 transactions)
+
+    The supermarket then calculates the support, confidence, and lift for each association rule:
+
+    - Rule 1: {Bread} → {Eggs}
+        - Support = 3/5 = 0.6
+        - Confidence = 3/4 = 0.75 (since 3 out of 4 transactions with Bread also have Eggs)
+        - Lift = 0.75 / 0.6 = 1.25
+    - Rule 2: {Milk} → {Bread}
+        - Support = 3/5 = 0.6
+        - Confidence = 3/3 = 1 (since all transactions with Milk also have Bread)
+        - Lift = 1 / 0.6 = 1.67
+
+    The supermarket can use these association rules to:
+
+    - Place Bread and Eggs near each other in the store to encourage customers to buy both.
+    - Offer a discount on Bread for customers who buy Milk.
+    - Use the market-basket model to recommend products to customers based on their purchase history.
