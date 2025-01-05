@@ -32,9 +32,21 @@
 
     Hadoop framework consists of:
       - Common (utilities)
+        - Provides libraries and utilities for tasks like file handling, networking, and compression.
+        - Acts as a foundation for other Hadoop components.
+
       - HDFS (Hadoop Distributed File System)
+        - A distributed storage system that splits data into smaller chunks (blocks) and stores them across multiple machines.
+        - Allows for scalable and fault-tolerant data storage
+      
       - YARN (Yet Another Resource Negotiator)
+        - Manages resources (like memory and CPU) across the Hadoop cluster.
+        - Enables multiple data processing frameworks (like MapReduce, Spark, and Flink) to run on the same cluster.
+
+
       - MapReduce (processing)
+        - A programming model and framework for processing large datasets in parallel.
+        - Breaks down complex tasks into smaller, manageable chunks (maps and reduces) that can be executed across the cluster.
 
 ### Why was Hadoop needed?
 
@@ -65,37 +77,57 @@
 
 ### Hadoop Architecture
 
+    ![alt text](image-4.png)
+
      Master-Slave Architecture in Hadoop
 
     (Mind Map)
 
         Hadoop Cluster
         |- NameNode (Master)
-        |- DataNodes (Slaves)
+            |- DataNodes (Slaves)
         |- JobTracker (Master)
-        |- TaskTrackers (Slaves)
+            |- TaskTrackers (Slaves)
 
 ### Hadoop Ecosystem
 
+    ![alt text](EcoSystem.png)
+
         Hadoop ecosystem includes tools and technologies that integrate with Hadoop for data processing, analytics, and management.
 
-      1. HDFS: Distributed storage
-      2. YARN: Resource management
-      3. MapReduce: Processing
-      4. Spark: In-memory processing
-      5. Pig: Data processing language
-      6. Hive: Data warehousing
-      7. HBase: NoSQL database
-      8. Mahout: Machine learning
-      9. Spark MLib: Machine learning
-      10. Apache Drill: SQL query engine
-      11. Zookeeper: Configuration management
-      12. Oozie: Workflow management
-      13. Flume: Data ingestion
-      14. Sqoop: Data transfer
-      15. Solr: Search engine
-      16. Lucene: Search library
-      17. Ambari: Cluster management
+      1. HDFS: Distributed storage: Stores data across multiple machines for scalability. Provides fault-tolerant data storage.
+
+      2. YARN: Resource management: Manages resources like memory and CPU across the cluster. Enables multiple processing frameworks.
+
+      3. MapReduce: Processing: Processes large datasets in parallel using maps and reduces. Scalable and fault-tolerant.
+
+      4. Spark: In-memory processing: Performs fast in-memory processing for big data analytics. Supports multiple programming languages.
+
+      5. Pig: Data processing language: Simplifies data processing using Pig Latin scripting language. Ideal for ad-hoc data analysis.
+
+      6. Hive: Data warehousing: Provides data warehousing and SQL-like querying for big data. Simplifies data analysis and reporting.
+
+      7. HBase: NoSQL database: Offers NoSQL database capabilities for big data storage. Provides real-time data access.
+
+      8. Mahout: Machine learning: Enables scalable machine learning for big data analytics. Supports various algorithms.
+
+      9. Spark MLib: Machine learning: Provides scalable machine learning library for Spark. Supports various algorithms.
+
+      10. Apache Drill: SQL query engine: Allows SQL querying on big data sources like HDFS and NoSQL databases. Provides real-time data access.
+
+      11. Zookeeper: Configuration management: Manages configuration and coordination across distributed systems. Ensures data consistency.
+
+      12. Oozie: Workflow management: Manages workflow orchestration for big data processing. Supports various processing frameworks.
+
+      13. Flume: Data ingestion: Ingests data from various sources into HDFS or other storage systems. Provides reliable data ingestion.
+
+      14. Sqoop: Data transfer: Transfers data between HDFS and relational databases. Supports batch and incremental data transfer.
+
+      15. Solr: Search engine: Provides scalable search engine capabilities for big data. Supports faceted search and filtering.
+
+      16. Lucene: Search library: Offers scalable search library capabilities for big data. Supports indexing and querying.
+
+      17. Ambari: Cluster management: Manages Hadoop cluster provisioning, monitoring, and management. Simplifies cluster administration.
 
 ## FS
 
@@ -109,6 +141,8 @@
     - Files are stored in a single location
     - Limited scalability
     - Prone to single-point failures
+
+    ![alt text](image-1.png)
 
 ### HDFS
 
@@ -133,7 +167,52 @@
 
     In summary, HDFS is a distributed file system designed for large-scale data storage and processing, while traditional file systems are suitable for smaller-scale data storage and retrieval.
 
+    ![alt text](image-2.png)
+
 ### HDFS Architecture
+
+    ![alt text](image-3.png)
+
+    HDFS Components
+
+    1. NameNode (NN): The master node that maintains metadata about the cluster, such as file locations and block replicas.
+    2. DataNode (DN): Slave nodes that store data blocks and provide data access.
+    3. Client: The application that accesses the HDFS cluster.
+
+    HDFS Architecture Diagram
+
+
+    +---------------+
+    |    Client     |
+    +---------------+
+            |
+            |
+            v
+    +---------------+
+    |    NameNode   |
+    |   (Metadata)  |
+    +---------------+
+            |
+            |
+            v
+    +---------------+---------------+
+    |     DataNode  |     DataNode  | ...
+    |   ( Block 1 ) |   ( Block 2 ) |
+    +---------------+---------------+
+
+
+    HDFS Data Flow
+
+    1. File Splitting: The client splits the file into fixed-size blocks (typically 128 MB).
+    2. Block Replication: The client sends the blocks to the NameNode, which replicates each block across multiple DataNodes (typically 3).
+    3. Metadata Storage: The NameNode stores metadata about the file, including block locations and replication information.
+    4. Data Retrieval: When the client requests a file, the NameNode provides the block locations, and the client retrieves the blocks directly from the DataNodes.
+
+    HDFS Features
+
+    1. Scalability: HDFS can scale horizontally by adding more DataNodes.
+    2. Fault Tolerance: HDFS replicates data across multiple DataNodes to ensure availability in case of node failures.
+    3. High Throughput: HDFS optimizes data transfer by using a pipeline of DataNodes to transfer data in parallel.
 
     HMaster
     Overview
@@ -185,6 +264,64 @@
         - Standalone mode: A single node runs all Hadoop components.
         - Pseudo-distributed mode: A single node runs multiple Hadoop components.
         - Fully distributed mode: Multiple nodes form a cluster, with each node running one or more Hadoop components.
+
+### HDFS Write Mechanism
+
+    1. Client Request: A client requests to write data to HDFS.
+    2. NameNode Allocation: The client contacts the NameNode to allocate a block for the data.
+    3. Block Creation: The NameNode creates a new block and returns the block ID and a list of DataNodes to store the block.
+    4. Data Transfer: The client splits the data into packets and transfers them to the first DataNode in the list.
+    5. Pipeline Creation: The first DataNode creates a pipeline to the next DataNode, and so on, until the last DataNode.
+    6. Data Replication: Each DataNode in the pipeline writes the data to its local storage and replicates it to the next DataNode.
+    7. Acknowledgement: Each DataNode sends an acknowledgement to the client after writing the data.
+    8. Block Confirmation: The client confirms the block write with the NameNode.
+
+### HDFS Read Mechanism
+
+    1. Client Request: A client requests to read data from HDFS.
+    2. NameNode Lookup: The client contacts the NameNode to get the block locations for the requested data.
+    3. Block Location: The NameNode returns the block locations, including the DataNodes that store the block replicas.
+    4. DataNode Selection: The client selects the closest DataNode that stores the block replica.
+    5. Data Transfer: The client requests the data from the selected DataNode, and the DataNode transfers the data to the client.
+    6. Data Verification: The client verifies the data integrity using checksums.
+    7. Block Caching: The client can cache the block data for future reads.
+
+#### Key Components
+
+    - NameNode: Maintains metadata about the HDFS namespace, including block locations and replication information.
+    - DataNode: Stores data blocks and provides data access.
+    - Block: A fixed-size chunk of data (typically 128 MB) that is stored and replicated across DataNodes.
+
+    Benefits
+
+    - Scalability: HDFS can scale horizontally by adding more DataNodes.
+    - Fault Tolerance: HDFS replicates data across multiple DataNodes to ensure availability in case of node failures.
+    - High Throughput: HDFS optimizes data transfer by using a pipeline of DataNodes to transfer data in parallel.
+
+### Control and Data Flow Summary
+
+    Control Flow
+
+    1. Client: Initiates read/write requests to HDFS.
+    2. NameNode: Maintains metadata, allocates blocks, and directs clients to DataNodes.
+    3. DataNode: Stores and retrieves data blocks.
+
+    Data Flow
+
+    4. Write:
+        1. Client splits data into blocks.
+        2. NameNode allocates blocks and directs client to DataNodes.
+        3. Client writes data to first DataNode, which replicates to other DataNodes.
+    5. Read:
+        1. Client requests data from NameNode.
+        2. NameNode directs client to nearest DataNode with requested block.
+        3. Client reads data from DataNode.
+
+    Key aspects:
+
+    - Scalability: HDFS scales horizontally by adding DataNodes.
+    - Fault Tolerance: Data replication ensures availability despite node failures.
+    - High Throughput: Pipelined data transfer optimizes performance.
 
 ## Hadoop MapReduce
 
@@ -365,7 +502,9 @@
 
 ### Hbase Architecture
 
-    HBase Architecture
+    ![alt text](image-5.png)
+
+    ![alt text](image-6.png)
 
     HBase's architecture consists of the following components:
 
@@ -384,6 +523,26 @@
     4. ZooKeeper helps manage the cluster by keeping track of the region servers and their assignments.
 
     This architecture allows HBase to scale horizontally, handle large amounts of data, and provide high availability and fault tolerance.
+
+
+    HMaster (HBase Master)
+
+    - The HMaster is the central controller of an HBase cluster.
+    - It's responsible for managing the cluster, handling region assignments, and maintaining the overall health of the cluster.
+    - The HMaster also handles tasks like creating, deleting, and altering tables.
+
+    Region Server
+
+    - A Region Server is a node in an HBase cluster that stores and manages a subset of the data, known as a region.
+    - Each Region Server is responsible for handling read and write requests for its assigned regions.
+    - Region Servers also handle tasks like data caching, data replication, and data splitting.
+
+    4 Main Components of Region Server
+
+    1. MemStore: A write-ahead log that stores data in memory before it's written to disk.
+    2. StoreFiles: Files that store the actual data, which are stored on disk.
+    3. BlockCache: A read cache that stores frequently accessed data in memory.
+    4. WAL (Write-Ahead Log): A log that stores all write operations before they're applied to the MemStore and StoreFiles.
 
 ### HDFS VS HBASE
 
@@ -670,6 +829,47 @@
 
     - Eventual consistency: MongoDB can be configured to use eventual consistency, which allows for higher availability but may result in temporary inconsistencies.
     - Read preference: MongoDB allows clients to specify a read preference, which can prioritize availability over consistency.
+
+
+    Functionality of MongoDB
+
+    1. Document-Oriented Database: Stores data in JSON-like documents called BSON (Binary Serialized Object Notation).
+    2. Flexible Schema: Dynamic schema allows for easy adaptation to changing data structures.
+    3. High Performance: Optimized for high throughput and low latency.
+    4. Scalability: Horizontal scaling through sharding and replication.
+    5. Rich Query Language: Supports complex queries, indexing, and aggregation.
+
+    Why Use MongoDB
+
+    6. Handling Large Amounts of Data: Suitable for big data and real-time web applications.
+    7. Flexible Data Model: Accommodates diverse data structures and schema changes.
+    8. High Scalability: Meets the demands of high-traffic applications.
+    9. Easy Integration: Supports various programming languages and frameworks.
+
+    MongoDB Process and Configuration
+
+    10. mongod: The primary daemon process that runs MongoDB.
+    11. mongos: The routing process for sharded clusters.
+    12. Configuration File: Typically named mongod.conf or mongodb.conf.
+    13. Command-Line Options: Override configuration file settings.
+
+    BSON Format
+
+    14. Binary Serialized Object Notation: A binary representation of JSON-like documents.
+    15. Efficient Storage: Reduces storage size and improves data transfer efficiency.
+    16. Platform-Independent: Allows for seamless data exchange between different systems.
+
+    Replication of Data
+
+    17. Replica Sets: A group of nodes that maintain the same data set.
+    18. Primary Node: Accepts writes and replicates data to secondary nodes.
+    19. Secondary Nodes: Maintain a copy of the data and can become primary in case of failure.
+
+    Consistency of Data
+
+    20. Strong Consistency: Ensures that all nodes have the same data values.
+    21. Eventual Consistency: Allows for temporary inconsistencies, but ensures that nodes will eventually converge to the same data values.
+    22. Causal Consistency: Ensures that causal relationships between operations are preserved.
 
 ## Association Rule
 
