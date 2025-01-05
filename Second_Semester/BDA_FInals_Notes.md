@@ -910,7 +910,7 @@
     3. Use frequent pairs to find frequent triplets, and so on.
     4. Stop when no more frequent patterns are found.
 
-### Complete Example
+### Sample Example for understanding
 
     A supermarket wants to analyze its sales data to identify patterns in customer purchases. The supermarket has the following sales data:
 
@@ -944,3 +944,100 @@
     - Place Bread and Eggs near each other in the store to encourage customers to buy both.
     - Offer a discount on Bread for customers who buy Milk.
     - Use the market-basket model to recommend products to customers based on their purchase history.
+
+### Complete Example Solution
+
+    Frequent Itemsets
+
+    Using the APriori algorithm, we identify the following frequent itemsets:
+
+    - {Bread, Eggs} (appears in 3 transactions)
+    - {Milk, Bread} (appears in 3 transactions)
+    - {Bread, Eggs, Cheese} (appears in 2 transactions)
+    - {Milk, Bread, Eggs} (appears in 2 transactions)
+    - {Eggs, Cheese} (appears in 2 transactions)
+    - {Bread, Cheese} (appears in 2 transactions)
+
+    Association Rules and Metrics
+
+    We calculate the support, confidence, and lift for each association rule:
+
+    Bread
+
+    - Rule: {Bread} → {Eggs}
+        - Support = 3/5 = 0.6
+        - Confidence = 3/4 = 0.75
+        - Lift = 0.75 / 0.6 = 1.25
+    - Rule: {Bread} → {Milk}
+        - Support = 3/5 = 0.6
+        - Confidence = 3/4 = 0.75
+        - Lift = 0.75 / 0.6 = 1.25
+    - Rule: {Bread} → {Cheese}
+        - Support = 2/5 = 0.4
+        - Confidence = 2/4 = 0.5
+        - Lift = 0.5 / 0.4 = 1.25
+
+    Milk
+
+    - Rule: {Milk} → {Bread}
+        - Support = 3/5 = 0.6
+        - Confidence = 3/3 = 1
+        - Lift = 1 / 0.6 = 1.67
+    - Rule: {Milk} → {Eggs}
+        - Support = 2/5 = 0.4
+        - Confidence = 2/3 = 0.67
+        - Lift = 0.67 / 0.4 = 1.67
+
+    Eggs
+
+    - Rule: {Eggs} → {Bread}
+        - Support = 3/5 = 0.6
+        - Confidence = 3/4 = 0.75
+        - Lift = 0.75 / 0.6 = 1.25
+    - Rule: {Eggs} → {Cheese}
+        - Support = 2/5 = 0.4
+        - Confidence = 2/4 = 0.5
+        - Lift = 0.5 / 0.4 = 1.25
+
+    Cheese
+
+    - Rule: {Cheese} → {Eggs}
+        - Support = 2/5 = 0.4
+        - Confidence = 2/2 = 1
+        - Lift = 1 / 0.4 = 2.5
+    - Rule: {Cheese} → {Bread}
+        - Support = 2/5 = 0.4
+        - Confidence = 2/2 = 1
+        - Lift = 1 / 0.4 = 2.5
+
+    Yogurt
+
+    - No association rules with sufficient support
+
+
+    Based on the association rules and metrics calculated earlier, here are some insights for the smart shopping assistant:
+
+    Recommendations for the Smart Shopping Assistant
+
+    Frequent Itemsets
+
+    1. Bread and Eggs: These two items are frequently purchased together (3 out of 5 transactions).
+    2. Milk and Bread: These two items are also frequently purchased together (3 out of 5 transactions).
+
+    Strong Association Rules
+
+    1. {Milk} → {Bread}: This rule has a high confidence (1) and lift (1.67), indicating that customers who buy Milk are very likely to also buy Bread.
+    2. {Cheese} → {Eggs}: This rule has a high confidence (1) and lift (2.5), indicating that customers who buy Cheese are very likely to also buy Eggs.
+
+    Product Placement Suggestions
+
+    1. Place Bread and Eggs near each other in the store to encourage customers to buy both.
+    2. Place Milk and Bread near each other in the store to encourage customers to buy both.
+    3. Consider offering a discount or promotion for customers who buy Milk and Bread together.
+
+    Personalized Recommendations
+
+    1. For customers who buy Milk, recommend Bread.
+    2. For customers who buy Cheese, recommend Eggs.
+
+    These insights can help the smart shopping assistant provide personalized recommendations, suggest relevant products, and optimize product placement in the store.
