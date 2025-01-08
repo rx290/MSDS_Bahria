@@ -268,6 +268,44 @@
     
     When: Hidden layers are used when the problem requires learning complex patterns or relationships, such as image recognition or natural language processing.
 
+    Here's a rewritten version of your text on hidden layers, incorporating concepts and explanations from the slides:
+
+Hidden Layers: Unlocking Complex Patterns
+
+    Hidden layers are the intermediate layers in a neural network, situated between the input and output layers. These layers play a crucial role in enabling the network to learn complex patterns and relationships within the data.
+
+    Why Hidden Layers?
+
+    The training data directly specifies the desired output for the output layer. However, the behavior of the hidden layers is not explicitly defined. Instead, the learning algorithm must determine how to utilize these layers to produce the desired output. This is why they are called "hidden" layers – the training data doesn't provide explicit instructions for each individual layer.
+
+    How Hidden Layers Work
+
+    Consider a 3-layer neural network with one input layer, two hidden layers, and one output layer. Each hidden layer consists of multiple nodes (neurons) that receive inputs from the previous layer, perform computations, and then send the output to the next layer.
+
+    The number of weights in this model can be calculated by multiplying the number of inputs by the number of nodes in each layer:
+
+    - Input to Hidden Layer 1: 3 inputs × 4 nodes = 12 weights
+    - Hidden Layer 1 to Hidden Layer 2: 4 nodes × 4 nodes = 16 weights
+    - Hidden Layer 2 to Output Layer: 4 nodes × 1 output = 4 weights
+
+    Total weights: 12 + 16 + 4 = 32
+
+    In addition to weights, each layer also has biases, which are constants added to the weighted sum. The total number of parameters to learn is:
+
+    - Number of weights: 32
+    - Number of biases: 4 (Hidden Layer 1) + 4 (Hidden Layer 2) + 1 (Output Layer) = 9
+    - Total parameters: 32 + 9 = 41
+
+    When to Use Hidden Layers?
+
+    Hidden layers are essential when working with complex problems that require learning intricate patterns or relationships, such as:
+
+    - Image recognition
+    - Natural language processing
+    - Speech recognition
+
+    By incorporating hidden layers into your neural network, you can enable the model to learn and represent complex data structures, leading to improved performance and accuracy.
+
 ### Deep Learning
 
     Deep learning refers to neural networks with multiple hidden layers. These networks can learn hierarchical representations of data, enabling them to solve complex problems like image and speech recognition.
@@ -341,11 +379,11 @@
 
     This topic refers to the early work on neural networks, which was inspired by the study of animal brains and their computing abilities.
 
-![alt text](Animal-Computing-Machinery.png)
+![Animal Computing Machinery](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Animal-Computing-Machinery.jpg)
 
 #### Neuron Firing
 
-![alt text](Neuron-Firing.png)
+![Neuron Firing](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Neuron-Firing.png)
 
     Neuron firing refers to the process by which a neuron sends a signal to other neurons. This process is inspired by the way biological neurons communicate with each other.
 
@@ -485,13 +523,42 @@ There are several choices to be made when implementing the Perceptron learning a
     The number of epochs determines how many times the Perceptron sees the training data. Increasing the number of epochs can improve the Perceptron's performance, but may also lead to overfitting.
 
     
-## Multilayer Perceptron / Feedforward Neural Network
+## Multilayer Perceptron / Feedforward Neural Network / Deep FeedForward Network
 
-    A Multilayer Perceptron (MLP) is a type of feedforward neural network that consists of multiple layers of interconnected nodes (neurons). Each layer processes the input data, and the output from one layer is used as the input to the next layer.
+        A Multilayer Perceptron (MLP) is a type of feedforward neural network that consists of multiple layers of interconnected nodes (neurons). Each layer processes the input data, and the output from one layer is used as the input to the next layer. This process allows the network to learn complex representations of the input data.
+
+    Note: The term "feedforward" refers to the fact that information flows only in one direction, from input to output, without any feedback connections.
+
+    Also, as mentioned in the slide, feedforward neural networks can be extended to include feedback connections, becoming Recurrent Neural Networks (RNNs), or specialized for tasks like object recognition using Convolutional Neural Networks (CNNs).
+
+    In the context of deep learning, feedforward neural networks are composed of multiple functions connected in a chain. For instance:
+
+    y = f(x) = f3(f2(f1(x)))
+
+    Here, f1, f2, and f3 represent different layers of the network. The depth of the model is determined by the overall length of this chain.
+
+    The final layer of a feedforward network is called the output layer.
+
+    Additional notes:
+
+    - Deep learning models are often characterized by their depth, which refers to the number of layers or functions composed together.
+    - The terminology "deep learning" originated from the concept of multiple layers in feedforward neural networks.
+    - MLPs are a fundamental type of deep learning model, and understanding their structure and functionality is essential for exploring more advanced architectures.
 
 ### Backpropogation
 
     Backpropagation is an essential algorithm in training MLPs. It's used to minimize the error between the network's predictions and the actual outputs. The algorithm works by propagating the error backwards through the network, adjusting the weights and biases at each layer to reduce the error.
+
+    Backpropagation History
+
+    - 1847: Gradient Descent
+    - 1945: First Programmable Machine
+    - 1950: Turing Test
+    - 1956: AI
+    - 1957: Perceptron
+    - 1959: Machine Learning
+    - 1986: Backpropagation for training neural networks
+    - 2012: Wave 3: Rise of Deep Learning
 
 ### Activation Function
 
@@ -690,6 +757,60 @@ There are several choices to be made when implementing the Perceptron learning a
 
     Mind Map:
 
+       Here is the revised mind map with improved readability:
+
+                                +-----------------------+
+                                |          TanH         |
+                                |  Activation Function  |
+                                +-----------------------+
+                                          |
+                                          |
+                                          v
+                  +-----------------------+-----------------------+
+                  |     Definition        |     Mathematical      |
+                  |                       |        Representation |
+                  +-----------------------+-----------------------+
+                            |                            |
+                            |                            |
+                            v                            v
+                  +----------------------------------------------+
+                  |              tanh(x) = 2 * (e^(2x) - 1)      |
+                  |                   ---------------            |
+                  |                     (e^(2x) + 1)             |
+                  +----------------------------------------------+
+                            |                           |
+                            |                           |
+                            v                           v
+                  +-----------------------+-----------------------+
+                  |       Properties      |        Advantages     |
+                  +-----------------------+-----------------------+
+                            |                           |
+                            |                           |
+                            v                           v
+                  +-------------------------+-----------------------+
+                  | Properties              | Advantages            |
+                  +-------------------------+-----------------------+
+                  | Range: (-1, 1)          | Differentiable        |
+                  | Differentiable          | Computationally       |
+                  | Computationally         | efficient             |
+                  | efficient               | Maps inputs to        |
+                  | Symmetric around        | outputs between -1    |
+                  | the origin              | and 1                 |
+                  +-------------------------+-----------------------+
+                            |                           |
+                            |                           |
+                            v                           v
+                  +-----------------------+-----------------------+
+                  |      Disadvantages    |      Applications     |
+                  +-----------------------+-----------------------+
+                            |                           |
+                            |                           |
+                            v                           v
+                  +-----------------------+   +-----------------------+
+                  |  Vanishing gradients  |   |  Recurrent neural     |
+                  |                       |   |  networks             |
+                  +-----------------------+   +-----------------------+
+
 #### ReLU
 
     What is it?
@@ -703,6 +824,58 @@ There are several choices to be made when implementing the Perceptron learning a
 
     When is it used?
     The ReLU function is used in the hidden layers of a neural network.
+
+    Mind Map:
+
+    
+      +---------------+
+      |  ReLU        |
+      |  Activation    |
+      |  Function      |
+      +---------------+
+              |
+              |
+              v
+      +---------------+---------------+
+      |               |               |
+      |  Definition   |  Mathematical  |
+      |               |  Representation |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  f(x) = max(0,|   |  x          |
+      |               |   |               |
+      +---------------+   +---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+---------------+
+      |               |               |
+      |  Properties   |  Advantages    |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  Range: [0, ∞)|   |  Computationally|
+      |               |   |  efficient     |
+      +---------------+   +---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+---------------+
+      |               |               |
+      |  Disadvantages|  Applications  |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  Dying ReLU   |   |  Deep neural  |
+      |               |   |  networks      |
+      +---------------+   +---------------+
 
 #### Leaky ReLU
 
@@ -732,6 +905,58 @@ There are several choices to be made when implementing the Perceptron learning a
     When is it used?
     The softmax function is used in the output layer of a neural network when the task is a multi-class classification problem.
 
+    Mind Map:
+
+    
+      +---------------+
+      |  Softmax     |
+      |  Activation    |
+      |  Function      |
+      +---------------+
+              |
+              |
+              v
+      +---------------+---------------+
+      |               |               |
+      |  Definition   |  Mathematical  |
+      |               |  Representation |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  σ(x) = e^x /|   |  Σ(e^x)      |
+      |               |   |               |
+      +---------------+   +---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+---------------+
+      |               |               |
+      |  Properties   |  Advantages    |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  Range: (0, 1)|   |  Normalized    |
+      |               |   |  output        |
+      +---------------+   +---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+---------------+
+      |               |               |
+      |  Disadvantages|  Applications  |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  Computationally|   |  Multi-class  |
+      |  expensive     |   |  classification|
+      +---------------+   +---------------+
+
 #### GELU
 
     What is it?
@@ -745,6 +970,60 @@ There are several choices to be made when implementing the Perceptron learning a
 
     When is it used?
     The GELU function is used in the hidden layers of a neural network.
+
+    Mind Map:
+
+    
+
+      +---------------+
+      |  GELU        |
+      |  Activation    |
+      |  Function      |
+      +---------------+
+              |
+              |
+              v
+      +---------------+---------------+
+      |               |               |
+      |  Definition   |  Mathematical  |
+      |               |  Representation |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  GELU(x) = 0.5|   |  x*(1 + tanh(|
+      |               |   |  √(2/π)*(x + 0.|
+      |               |   |  044715*x^3)))|
+      +---------------+   +---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+---------------+
+      |               |               |
+      |  Properties   |  Advantages    |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  Range: (-∞, ∞)|   |  Smooth and    |
+      |               |   |  differentiable|
+      +---------------+   +---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+---------------+
+      |               |               |
+      |  Disadvantages|  Applications  |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  Computationally|   |  Deep neural  |
+      |  expensive     |   |  networks      |
+      +---------------+   +---------------+
 
 #### Parametric ReLU
 
@@ -763,6 +1042,65 @@ There are several choices to be made when implementing the Perceptron learning a
     When is it used?
     The Parametric ReLU function is used in the hidden layers of a neural network.
 
+    Mind Map:
+
+        
+      +---------------+
+      |  Parametric  |
+      |  ReLU        |
+      +---------------+
+              |
+              |
+              v
+      +---------------+---------------+
+      |               |               |
+      |  Definition   |  Mathematical  |
+      |               |  Representation |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  f(x) = max(αx,|   |  x          |
+      |               |   |               |
+      +---------------+   +---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+---------------+
+      |               |               |
+      |  Properties   |  Advantages    |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+   +---------------+
+      |  Range: (-∞, ∞)|   |  Allows a small|
+      |               |   |  fraction of the|
+      |               |   |  input to pass  |
+      |               |   |  through        |
+      +---------------+   +---------------+
+              |               |
+              |               |
+              v               v
+      +---------------+---------------+
+      |               |               |
+      |  Disadvantages|  Applications  |
+      +---------------+---------------+
+              |               |
+              |               |
+              v               v
+        +---------------+----------------+
+        |  Disadvantages|  Applications  |
+        +---------------+----------------+
+                |               |
+                |               |
+                v               v
+        +---------------+   +---------------+
+        |  Computationally|   |  Deep neural  |
+        |  expensive     |   |  networks      |
+        +---------------+   +---------------+
+
 #### ELU
 
     What is it?
@@ -778,6 +1116,58 @@ There are several choices to be made when implementing the Perceptron learning a
     The ELU function is used in the hidden layers of a neural network.
 
     In summary, each activation function has its own strengths and weaknesses, and the choice of which one to use depends on the specific problem and dataset.
+
+    Mind Map:
+
+          +---------------+
+  |  ELU         |
+  |  Activation    |
+  |  Function      |
+  +---------------+
+          |
+          |
+          v
+  +---------------+---------------+
+  |               |               |
+  |  Definition   |  Mathematical  |
+  |               |  Representation |
+  +---------------+---------------+
+          |               |
+          |               |
+          v               v
+  +---------------+   +---------------+
+  |  f(x) = x if x|   |  α*(e^x - 1) |
+  |  ≥ 0, α*(e^x -|   |               |
+  |  1) if x < 0  |   |               |
+  +---------------+   +---------------+
+          |               |
+          |               |
+          v               v
+  +---------------+---------------+
+  |               |               |
+  |  Properties   |  Advantages    |
+  +---------------+---------------+
+          |               |
+          |               |
+          v               v
+  +---------------+   +---------------+
+  |  Range: (-∞, ∞)|   |  Smooth and    |
+  |               |   |  differentiable|
+  +---------------+   +---------------+
+          |               |
+          |               |
+          v               v
+  +---------------+---------------+
+  |               |               |
+  |  Disadvantages|  Applications  |
+  +---------------+---------------+
+          |               |
+          |               |
+          v               v
+  +---------------+   +---------------+
+  |  Computationally|   |  Deep neural  |
+  |  expensive     |   |  networks      |
+  +---------------+   +---------------+
 
 ### Activation Function Mind Map
 
@@ -841,111 +1231,154 @@ Here is a mind map for the Sigmoid activation function:
     - Disadvantages of the Sigmoid function (vanishing gradients, etc.)
     - Applications of the Sigmoid function (binary classification, logistic regression, etc.)
 
+## FeedForward Neural Network
+
+    Feedforward
+
+    A feedforward neural network means that each layer serves as input to the next layer, without any feedback loops. Information flows only in one direction, from input layer to output layer.
+
+## Fully Connected FeedForward Neural Network
+
+    Fully Connected
+
+    A fully connected neural network means that each unit (neuron) in one layer provides input to every unit in the next layer. This creates a dense connection between layers, allowing the network to learn complex relationships between inputs.
 
 
+### What to learn in Neural Networks?
 
+    What to Learn in Neural Networks?
 
-TanH (Hyperbolic Tangent)
+    1. Weights: adjustable parameters that control the strength of connections between units.
+    2. Bias: constants added to the weighted sum to shift the activation function.
 
+    How Neural Networks Learn
 
-      +---------------+
-      |  TanH        |
-      |  Activation    |
-      |  Function      |
-      +---------------+
-              |
-              |
-              v
-      +---------------+---------------+
-      |               |               |
-      |  Definition   |  Mathematical  |
-      |               |  Representation |
-      +---------------+---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+   +---------------+
-      |  tanh(x) = 2/|   |  e^(2x) - 1  |
-      |               |   |  e^(2x) + 1  |
-      +---------------+   +---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+---------------+
-      |               |               |
-      |  Properties   |  Advantages    |
-      +---------------+---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+   +---------------+
-      |  Range: (-1, 1)|   |  Differentiable|
-      |               |   |  Computationally|
-      |               |   |  efficient     |
-      +---------------+   +---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+---------------+
-      |               |               |
-      |  Disadvantages|  Applications  |
-      +---------------+---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+   +---------------+
-      |  Vanishing    |   |  Recurrent    |
-      |  gradients     |   |  neural networks|
-      +---------------+   +---------------+
+    The learning process involves repeating the following steps until a stopping criterion is met:
 
+    3. Forward Pass: Propagate training data through the model to make predictions.
+    4. Quantify Dissatisfaction: Calculate the error or loss between predicted and actual outputs.
+    5. Backward Pass: Calculate gradients backward to assign blame to each model parameter.
+    6. Update Parameters: Adjust each parameter using the calculated gradients.
 
-Leaky ReLU
+    Stopping Criteria
 
+    Common stopping criteria include:
 
-      +---------------+
-      |  Leaky ReLU  |
-      |  Activation    |
-      |  Function      |
-      +---------------+
-              |
-              |
-              v
-      +---------------+---------------+
-      |               |               |
-      |  Definition   |  Mathematical  |
-      |               |  Representation |
-      +---------------+---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+   +---------------+
-      |  f(x) = max(αx,|   |  x          |
-      |               |   |               |
-      +---------------+   +---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+---------------+
-      |               |               |
-      |  Properties   |  Advantages    |
-      +---------------+---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+   +---------------+
-      |  Range: (-∞, ∞)|   |  Allows a small|
-      |               |   |  fraction of the|
-      |               |   |  input to pass  |
-      |               |   |  through        |
-      +---------------+   +---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+---------------+
-      |               |               |
-      |  Disadvantages|  Applications  |
-      +---------------+---------------+
-              |               |
-              |               |
-              v               v
-      +---------------+
+    7. Weight changes are incredibly small.
+    8. Finished a pre-specified number of epochs.
+    9. Percentage of misclassified examples is below some threshold.
+
+## Neural Network Optimization
+
+### Learning Rate
+
+### Number of Epochs
+
+### Batch Size
+
+### Regularization Techniques (Optional)
+
+## Support Vector Machines
+
+### What why when?    
+
+### Hyperplane
+
+### Types
+
+#### Linear
+
+#### Non-Linear       
+
+### Margin
+
+### Decision Boundary
+
+### Kernel Trick
+
+### Kernel Function
+
+#### Linear 
+
+#### Polynomial
+
+#### Gaussian Kernel Radial Basis Function
+
+##### Gaussian Distribution Curve
+
+#### Sigmoid
+
+### How to choose a Kernel Function
+
+### SVM Pros and Cons
+
+### SVM for Multi-class Classification
+    
+    5. Evaluation
+       1. what, why, when?
+       
+       2. Evaluation Strategies
+       
+       3. Types of Datasets
+          1. Training Set
+          2. Validation Set
+          3. Test Set
+       
+       4. Estimation
+          1. Re-Substitution
+          2. Leave One Out Method
+          3. Hold Out Method
+          4. Cross Validation Method
+          5. Bootstrap
+       
+       5. Evaluation Metrics
+          1. Confusion Matrix
+          
+          2. Accuracy
+          
+          3. Binary Classification Confusion Matrix
+             1. True Positive Rate
+             2. False Positive Rate
+             3. Overall success rate (Accuracy)
+             4. Error Rate
+          
+          4. Sensitivity and Specificity
+          
+          5. Precision and Recall
+          
+          6. F-Measure
+          
+          7. Receiver Operating Characteristic (ROC) curve : Optional
+          
+          8. Aread Under the ROC Curve (AUC) : OPtional
+
+       6. Ensemble Learning
+          1. What, why, when?
+
+          2. Types
+             1. Homogenous Ensembles
+             2. Heterogeneous Ensembles
+
+          3. Types of Ensemble Methods
+             1. Bagging
+             2. Boosting
+             3. Stacking
+             4. Aggregate Methods
+
+          4. Ensemble Methods
+             1. Parallel Ensemble Methods
+                1. Bootstrap Aggregating (Bagging)
+                2. Random Forest (Bagging)
+             2. Sequential Ensemble Methods
+                1. Gradient Boosted Decision Trees(GBDT)
+                2. XG Boost
+                3. ADA Boost
+                4. Voting
+                5. Light GBM
+                6. Cat Boost
+             3. Stacking
+
+          5. Ensemble Learning Techniques
+             1. Voting
+             2. Averaging
+             3. Weighted Average
