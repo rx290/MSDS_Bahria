@@ -335,6 +335,22 @@ Hidden Layers: Unlocking Complex Patterns
 
     When: Backpropagation is used during the training process to refine the neural network's predictions and improve its performance.
 
+### When to Stop Training Neural Network
+
+    Stopping Criteria for Neural Network Training
+
+    Training a neural network involves repeating forward pass, quantifying dissatisfaction, backward pass, and updating parameters. But when do we stop?
+
+    Common Stopping Criteria
+
+    1. Weight Changes are Incredibly Small: Stop training when weight updates are negligible.
+    2. Pre-Specified Number of Epochs: Train for a fixed number of epochs (e.g., 100).
+    3. Misclassification Threshold: Stop when the percentage of misclassified examples falls below a certain threshold (e.g., 5%).
+
+    Key Takeaway
+
+    Choose a stopping criterion that balances training time and model performance.
+
 ### Learning
 
     Learning refers to the process of adjusting the weights and biases of a neural network to minimize the error between predicted and actual outputs.
