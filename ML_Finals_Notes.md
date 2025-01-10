@@ -1739,7 +1739,38 @@ Receiver Operating Characteristic (ROC) Curve: A plot of true positive rate vs. 
 
 Area Under the ROC Curve (AUC): A measure of the model's ability to distinguish between positive and negative classes (optional)
 
-       2. Ensemble Learning
+## Last Slides
+
+    Confusion Matrix:
+
+    | Actual Class \ Predicted Class | Positive (P) | Negative (N) |
+    | --- | --- | --- |
+    | Positive (P) | True Positives (TP) | False Negatives (FN) |
+    | Negative (N) | False Positives (FP) | True Negatives (TN) |
+
+    Example Confusion Matrix:
+
+    | Actual Class \ Predicted Class | Buy Computer = Yes | Buy Computer = No | Total |
+    | --- | --- | --- | --- |
+    | Buy Computer = Yes | 6954 | 46 | 7000 |
+    | Buy Computer = No | 412 | 2588 | 3000 |
+    | Total | 7366 | 2634 | 10000 |
+
+    Metrics Derived from Confusion Matrix:
+
+    1. Accuracy: Percentage of correctly classified instances.
+    Accuracy = (TP + TN) / Total
+    2. Error Rate: Percentage of misclassified instances.
+    Error Rate = 1 - Accuracy = (FP + FN) / Total
+    3. Sensitivity (True Positive Rate): Recognition rate of positive class.
+    Sensitivity = TP / P
+    4. Specificity (True Negative Rate): Recognition rate of negative class.
+    Specificity = TN / N
+
+    Class Imbalance Problem:
+    When one class has a significant majority (e.g., negative class) and the other class has a minority (e.g., positive class), metrics like accuracy can be misleading. In such cases, sensitivity, specificity, and other metrics like precision, recall, and F1-score are more informative.
+
+       1. Ensemble Learning
           1. What, why, when?
 
           2. Types
