@@ -1259,7 +1259,6 @@ Here is a mind map for the Sigmoid activation function:
 
     A fully connected neural network means that each unit (neuron) in one layer provides input to every unit in the next layer. This creates a dense connection between layers, allowing the network to learn complex relationships between inputs.
 
-
 ### What to learn in Neural Networks?
 
     What to Learn in Neural Networks?
@@ -1286,89 +1285,461 @@ Here is a mind map for the Sigmoid activation function:
 
 ## Neural Network Optimization
 
-### Learning Rate
+    Optimizing a neural network involves adjusting various parameters to improve its performance and efficiency.
 
-### Number of Epochs
+### Optimizing Learning Rate
+
+    - Definition: The learning rate determines how quickly the network learns from its mistakes.
+    - High Learning Rate: Fast learning, but may overshoot optimal solution.
+    - Low Learning Rate: Slow learning, but more stable convergence.
+    - Ideal Learning Rate: Depends on problem, but typically between 0.01 and 0.001.
+
+### Optimizing Number of Epochs
+
+    - Definition: An epoch is a single pass through the entire training dataset.
+    - More Epochs: Better convergence, but risk of overfitting.
+    - Fewer Epochs: Faster training, but may not converge.
 
 ### Batch Size
 
+    - Definition: The batch size determines how many samples are processed together before updating weights.
+    - Large Batch Size: Faster training, but may not capture subtle patterns.
+    - Small Batch Size: More accurate training, but slower.
+
 ### Regularization Techniques (Optional)
+
+    Regularization techniques help prevent overfitting by adding penalties to the loss function.
+
+    - L1 Regularization (Lasso): Adds penalty proportional to absolute value of weights.
+    - L2 Regularization (Ridge): Adds penalty proportional to square of weights.
+    - Dropout: Randomly drops out neurons during training to prevent reliance on single neurons.
+
+### Optimizaiton Summary
+
+    Key Takeaway: Finding the optimal combination of learning rate, number of epochs, batch size, and regularization techniques requires experimentation and patience.
 
 ## Support Vector Machines
 
 ### What why when?    
 
+    What?
+
+    A Support Vector Machine (SVM) is a supervised machine learning model used for binary classification problems.
+
+    Why?
+
+    SVMs are useful when you have labeled training data and want to categorize new, unseen data.
+
+    When?
+
+    Use SVMs when:
+
+    - You have binary classification problems (e.g., spam vs. non-spam emails)
+    - You want to find the optimal decision boundary between classes
+
+    How SVMs Work
+
+    1. Plot labeled training data on a plane.
+    2. Find the hyperplane that best separates classes.
+    3. Use the hyperplane as the decision boundary to classify new data.
+
+Key Takeaway
+
+SVMs are powerful tools for binary classification problems. By finding the optimal hyperplane, SVMs can accurately categorize new data.
+
 ### Hyperplane
+
+    - Definition: The hyperplane is the decision boundary that separates classes.
+    - In 2D, the hyperplane is a line. In higher dimensions, it's a plane or hyperplane.
+    - Goal: Find the hyperplane that maximizes the margin (distance) between classes.
 
 ### Types
 
-#### Linear
+    Types of Support Vector Machines
 
-#### Non-Linear       
+Linear SVM
+
+    - Used when data is perfectly linearly separable
+    - Data points can be classified into 2 classes using a single straight line (if 2D)
+
+Non-Linear SVM
+
+    - Used when data is not linearly separable
+    - Kernel tricks are used to classify data points
+    - Most real-world applications use Non-Linear SVM
+    - 
 
 ### Margin
 
+Support Vectors and Margins
+
+Support Vectors
+
+- Data points closest to the hyperplane
+- Define the separating line
+
+Margin
+
+- Distance between hyperplane and support vectors
+- Large margin is considered a good margin
+
 ### Decision Boundary
+
+Decision Boundary
+
+- The circumference of radius 1 that separates both tags using SVM
 
 ### Kernel Trick
 
 ### Kernel Function
 
-#### Linear 
+    Kernel Functions
+    
+      - Method to transform data into required form for processing
+      - Mathematical functions that convert low-dimensional input space into higher-dimensional space
+    - Types of kernel functions:
+        1. Linear
+        2. Polynomial
+        3. Gaussian
+        4. Radial Basis Function (RBF)
+        5. Sigmoid
+
+    Key Takeaway: SVMs can be linear or non-linear, and kernel functions are used to transform data into a higher-dimensional space for non-linear classification.
+
+#### Linear
+
+    Linear Kernel
+
+    - Definition: The linear kernel is the simplest kernel function.
+    - Use case: Used when the data is linearly separable.
+    - Equation: K(x, xi) = sum(x*xi)
 
 #### Polynomial
 
+    Polynomial Kernel
+
+    - Definition: The polynomial kernel is effective for non-linear data.
+    - Use case: Computes the similarity between two vectors in terms of the polynomial of the original variables.
+    - Equation: K(Xi . Xj) = (xi . xj +1)^p
+
 #### Gaussian Kernel Radial Basis Function
+
+    Gaussian Kernel/Radial Basis Function (RBF)
+
+    - Definition: The RBF kernel is also known as the Gaussian Radial Basis Kernel.
+    - Use case: Effective for non-linear data.
+    - Equation: K(Xi.Xj) = exp(-(||Xi-Xj||^2/2a^2)
 
 ##### Gaussian Distribution Curve
 
-#### Sigmoid
+#### Sigmoid Kernel
+
+    Sigmoid Kernel
+
+    - Definition: The sigmoid kernel is equivalent to a simple two-layer neural network.
+    - Use case: Suitable for neural networks, but not widely used in SVM.
+    - Equation: tanh(ax^Txi+r)
 
 ### How to choose a Kernel Function
 
+    Choosing a Kernel Function
+
+    - Depends on dataset: Choose a kernel based on the type of dataset.
+    - Linear kernel: Use for linearly separable data.
+    - RBF kernel: Use for non-linear data.
+
 ### SVM Pros and Cons
 
-### SVM for Multi-class Classification
-    
-    5. Evaluation
-       1. what, why, when?
-       
-       2. Evaluation Strategies
-       
-       3. Types of Datasets
-          1. Training Set
-          2. Validation Set
-          3. Test Set
-       
-       4. Estimation
-          1. Re-Substitution
-          2. Leave One Out Method
-          3. Hold Out Method
-          4. Cross Validation Method
-          5. Bootstrap
-       
-       5. Evaluation Metrics
-          1. Confusion Matrix
-          
-          2. Accuracy
-          
-          3. Binary Classification Confusion Matrix
-             1. True Positive Rate
-             2. False Positive Rate
-             3. Overall success rate (Accuracy)
-             4. Error Rate
-          
-          4. Sensitivity and Specificity
-          
-          5. Precision and Recall
-          
-          6. F-Measure
-          
-          7. Receiver Operating Characteristic (ROC) curve : Optional
-          
-          8. Aread Under the ROC Curve (AUC) : OPtional
+    SVM Pros and Cons
 
-       6. Ensemble Learning
+    Advantages
+
+    - Effective in high dimensions: SVM works well with high-dimensional data.
+    - Robust to outliers: SVM is not sensitive to outliers.
+    - Global solution: SVM training always finds a global solution.
+
+    Disadvantages
+
+    - Choosing a good kernel is difficult: Selecting a suitable kernel can be challenging.
+    - Not suitable for large datasets: SVM can be slow for very large datasets.
+
+### SVM for Multi-class Classification
+
+        SVM for Multi-Class Classification
+
+    - One-vs-all approach: Train m classifiers, one for each class.
+    - Classifier j: Learns to return a positive value for class j and a negative value for the rest.
+    - Test tuple assignment: Assign the class corresponding to the largest positive distance.
+
+    
+## Evaluation
+
+### what, why, when?
+
+    What, Why, When?
+
+    What?
+    Evaluation is the process of assessing the performance of a machine learning model.
+
+    Why?
+    Evaluation is necessary to:
+
+    1. Estimate the model's performance on unseen data: Evaluate how well the model will perform on new, unseen data.
+    2. Compare the performance of different models: Compare the performance of different models to select the best one.
+    3. Identify areas for improvement: Identify areas where the model can be improved.
+
+    When?
+    Evaluation should be done:
+
+    1. During model development to tune hyperparameters: Evaluate the model during development to tune hyperparameters and improve performance.
+    2. After model training to estimate performance on unseen data: Evaluate the model after training to estimate its performance on new, unseen data.
+
+### Evaluation Strategies
+
+    Evaluation strategies refer to the different methods used to split the dataset into training, testing, and validation sets.
+
+    Why is error on the training data not a good indicator of performance on future data?
+
+    1. New data will probably not be exactly the same as the training data: The new data may have different characteristics, making it different from the training data.
+    2. The classifier might be fitting the training data too precisely (over-fitting): The model may be too complex and fit the training data too closely, resulting in poor performance on new data.
+
+### Types of Datasets
+
+Types of Datasets
+
+- Training Set: Used to train the model
+- Validation Set: Used to tune hyperparameters
+- Test Set: Used to estimate performance on unseen data
+
+![Types of Dataset](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Types-of-DS.png)
+
+### Estimation
+
+Estimation
+
+    Estimation refers to the process of evaluating a model's performance using various techniques.
+
+#### Re-Substitution
+
+    Re-Substitution involves testing the model using the same dataset used for training.
+    Re-Substitution error rate indicates how well the model performs on the training data, but it is not a reliable indicator of performance on future, unseen data.
+
+#### Leave One Out Method
+
+    Leave One Out Method involves:
+    1. Leaving one instance out of the training data.
+    2. Training the model using the remaining instances.
+    3. Repeating steps 1-2 for all instances.
+    4. Computing the mean error.
+
+#### Hold Out Method
+
+    Hold Out Method involves:
+    1. Splitting the dataset into two subsets: training and validation.
+    2. Using one subset for training and the other for validation.
+    Common practice: Train using 2/3 of the dataset and test using the remaining 1/3.
+
+##### Repeated Hold Out Method
+
+    Repeated Hold Out Method involves:
+    1. Repeating the Hold Out Method multiple times.
+    2. Averaging the error rates from each iteration.
+
+#### K-Fold Cross Validation
+
+    K-Fold Cross Validation involves:
+    1. Dividing the dataset into k equal parts (folds).
+    2. Using one fold for testing and the remaining folds for training.
+    3. Repeating step 2 for all folds.
+    4. Averaging the accuracy across all folds.
+    Common practice: Use 10 folds.
+
+#### Repeated K-Fold Cross Validation
+
+    Repeated K-Fold Cross Validation involves:
+    1. Repeating the K-Fold Cross Validation multiple times.
+    2. Averaging the accuracy across all iterations.
+
+#### Bootstrap
+
+    Bootstrap Sampling involves:
+    1. Sampling the dataset with replacement to form a new training set.
+    2. Using the instances from the original dataset that don't occur in the new training set for testing.
+
+### Evaluation Metrics
+
+Evaluation Metrics
+
+#### Confusion Matrix
+
+    Confusion Matrix: A table used to evaluate the performance of a classification model
+    Accuracy: The proportion of correctly classified instances
+    Binary Classification Confusion Matrix
+
+    - True Positive Rate: The proportion of true positives
+    - False Positive Rate: The proportion of false positives
+    - Overall Success Rate (Accuracy): The proportion of correctly classified instances
+    - Error Rate: The proportion of misclassified instances
+
+          Predicted
+            +-----------+-----------+
+            |  Negative |  Positive |
+            +-----------+-----------+
+    Actual  |           |           |
+ ---------  |           |           |
+   Negative |    TN     |    FP     |
+ ---------  |           |           |
+  Positive  |    FN     |    TP     |
+ ---------  +-----------+-----------+
+
+##### Accuracy for CM
+
+Accuracy
+
+- Definition: Accuracy is the proportion of correctly classified instances out of all instances in the test dataset.
+- Formula: Accuracy = (TP + TN) / (TP + TN + FP + FN)
+- Range: 0 to 1, where 1 is perfect accuracy
+
+##### Accuracy for Evaluation Metrics
+
+    Formula: Accuracy = (no of correctly classified instances / total no of instances) * 100
+
+    Limitations of Accuracy
+
+    1. Assumes equal cost of all classes: Accuracy treats all classes as equally important, which can be misleading in imbalanced datasets.
+    2. Doesn't differentiate between types of errors: Accuracy doesn't distinguish between false positives and false negatives, which can have different consequences in various applications.
+
+    Examples of Accuracy Limitations
+
+    1. Medical Diagnosis: A model that classifies all patients as healthy may achieve high accuracy (e.g., 99.9%), but this is misleading, as the model is not detecting any diseases.
+    2. E-commerce: A model that predicts no purchases may achieve high accuracy (e.g., 99%), but this is not useful for identifying potential customers.
+    3. Security: A model that classifies all individuals as non-terrorists may achieve high accuracy (e.g., 99.99%), but this is not effective in detecting actual terrorists.
+
+#### Binary Classification Confusion Matrix
+
+Binary Classification Confusion Matrix
+
+A confusion matrix is a table used to evaluate the performance of a binary classification model.
+
+|                 |  Predicted Positive   |  Predicted Negative  |
+| --------------- | --------------------- | -------------------- |
+| Actual Positive |  True Positives (TP)  | False Negatives (FN) |
+| Actual Negative |  False Positives (FP) | True Negatives (TN)  |
+
+##### True Positive Rate
+
+True Positive Rate (TPR)
+
+- Definition: TPR is the proportion of true positives out of all actual positive instances.
+- Formula: TPR = TP / (TP + FN)
+- Range: 0 to 1, where 1 is perfect TPR
+
+##### False Positive Rate
+
+False Positive Rate (FPR)
+
+- Definition: FPR is the proportion of false positives out of all actual negative instances.
+- Formula: FPR = FP / (FP + TN)
+- Range: 0 to 1, where 0 is perfect FPR
+
+##### Overall success rate (Accuracy)
+
+Overall Success Rate (Accuracy)
+
+- Definition: Accuracy is the proportion of correctly classified instances out of all instances in the test dataset.
+- Formula: Accuracy = (TP + TN) / (TP + TN + FP + FN)
+- Range: 0 to 1, where 1 is perfect accuracy
+
+##### Error Rate
+
+Error Rate
+
+- Definition: Error rate is the proportion of misclassified instances out of all instances in the test dataset.
+- Formula: Error Rate = (FP + FN) / (TP + TN + FP + FN)
+- Range: 0 to 1, where 0 is perfect error rate
+
+#### Sensitivity and Specificity
+
+    Sensitivity
+
+    - Definition: Proportion of true positives (actual positives correctly identified)
+    - Formula: Sensitivity = TP / (TP + FN)
+    - Interpretation: Measures a classifier's ability to detect positive classes (its positivity)
+
+    Specificity
+
+    - Definition: Proportion of true negatives (actual negatives correctly identified)
+    - Formula: Specificity = TN / (TN + FP)
+    - Interpretation: Measures how accurate a classifier is in not detecting too many false positives (it measures its negativity)
+
+    Relationship between Sensitivity and Specificity
+
+    - High sensitivity is often accompanied by low specificity, and vice versa.
+    - High specificity is often used to confirm the results of sensitive tests.
+
+#### Precision and Recall
+
+Precision and Recall
+
+    Precision
+
+    - Definition: Proportion of true positives among all positive predictions
+    - Formula: Precision = TP / (TP + FP)
+    - Interpretation: Measures the accuracy of positive predictions (how many predicted positives are actually positive)
+
+    Recall
+
+    - Definition: Proportion of true positives among all actual positive instances
+    - Formula: Recall = TP / (TP + FN)
+    - Interpretation: Measures the completeness of positive predictions (how many actual positives are correctly predicted)
+
+    Relationship between Precision and Recall
+
+    - Precision and recall are often traded off against each other.
+    - High precision may come at the cost of low recall, and vice versa.
+
+    Application in Information Retrieval
+
+    - Precision and recall are used to measure the accuracy of search engines.
+    - Recall is defined as (number of relevant documents retrieved) divided by (total number of relevant documents).
+    - Precision is defined as (number of relevant documents retrieved) divided by (total number of documents retrieved).
+
+    These metrics are essential in evaluating the performance of machine learning models, search engines, and other information retrieval systems
+
+#### F-Measure
+
+    F-Measure: The harmonic mean of precision and recall
+                                        1                           2 x Precision x Recall                  2 x TP
+        Formula: F measure= -------------------------------  =    ----------------------------  =   ----------------------
+                                1               1                     Precision + Recall              2 x TP + FP + FN
+                            -------------  + -------------
+                                Recall          Precision
+
+    Interpretation: The F-measure is a balanced measure that takes into account both precision and recall. It provides a single score that represents the overall performance of a model.
+
+    Properties of F-Measure
+
+    - The F-measure is biased towards all cases except true negatives.
+    - It is sensitive to class imbalance.
+    - It is a good measure when you want to balance precision and recall.
+
+    When to Use F-Measure
+
+    - When you need a single score to evaluate a model's performance.
+    - When precision and recall are equally important.
+    - When you want to compare the performance of different models.
+
+    The F-measure is a popular evaluation metric in machine learning, especially in applications where precision and recall are equally important, such as information retrieval, natural language processing, and computer vision.
+
+#### Receiver Operating Characteristic (ROC) curve : Optional
+
+Receiver Operating Characteristic (ROC) Curve: A plot of true positive rate vs. false positive rate (optional)
+
+#### Aread Under the ROC Curve (AUC) : OPtional
+
+Area Under the ROC Curve (AUC): A measure of the model's ability to distinguish between positive and negative classes (optional)
+
+       2. Ensemble Learning
           1. What, why, when?
 
           2. Types
