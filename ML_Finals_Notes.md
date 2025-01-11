@@ -1777,44 +1777,55 @@ Area Under the ROC Curve (AUC): A measure of the model's ability to distinguish 
 ![Ensemble Learning](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Ensemble_Learning.png)
 
     What is Ensemble Learning?
+
     Ensemble learning combines multiple machine learning models to improve predictive performance, robustness, and generalizability.
 
     Why Ensemble Learning?
 
-    1. Improved accuracy: Ensemble methods can reduce bias and variance, leading to better predictions.
+    1. Improved Accuracy: Ensemble methods can reduce bias and variance, leading to better predictions.
     2. Robustness: Combining models can reduce the impact of individual model errors.
-    3. Handling complex data: Ensembles can effectively handle complex, high-dimensional data.
+    3. Handling Complex Data: Ensembles can effectively handle complex, high-dimensional data.
 
     When to Use Ensemble Learning?
 
-    1. Complex problems: Ensemble methods excel in challenging tasks, such as image classification, natural language processing, and recommender systems.
-    2. Large datasets: Ensembles can efficiently handle large datasets and reduce overfitting.
-    3. Model uncertainty: When model selection is uncertain, ensembles can provide a more robust solution.
+    1. Complex Problems: Ensemble methods excel in challenging tasks, such as image classification, natural language processing, and recommender systems.
+    2. Large Datasets: Ensembles can efficiently handle large datasets and reduce overfitting.
+    3. Model Uncertainty: When model selection is uncertain, ensembles can provide a more robust solution.
+
+    Key Benefits
+
+    1. Improved Predictive Performance: Ensemble methods can improve accuracy and robustness.
+    2. Reduced Variance and Bias: Ensemble methods can decrease variance and bias.
+    3. Increased Robustness: Ensemble methods can reduce the impact of individual model errors.
+
+    Implementation
+
+    1. Weka's Meta-Learners: Use meta-learners to combine multiple models.
+    2. Heterogeneous Ensembles: Combine different models using weighting and meta-learning.
+
+    Conclusion
+
+    Ensemble learning improves machine learning results by combining multiple models. Ensemble methods are meta-algorithms that combine several machine learning techniques to decrease variance, bias, or improve predictions.
 
 ## Ensemble Types
 
-    Ensemble Types
+![Ensemble Types](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Type_Fig.png)
 
-    1. Homogenous Ensembles: Combine multiple instances of the same model (e.g., random forests).
-    2. Heterogeneous Ensembles: Combine different models (e.g., neural networks, decision trees, and support vector machines).
+  1. Homogenous Ensembles: Combine multiple instances of the same model (e.g., random forests).
+  2. Heterogeneous Ensembles: Combine different models (e.g., neural networks, decision trees, and support vector machines).
 
 ## Types of Ensemble Methods
 
     Types of Ensemble Methods
 
-    1. Bagging (Bootstrap Aggregating): Combine multiple instances of the same model, trained on different subsets of the data.
-    2. Boosting: Sequentially train models, focusing on misclassified instances, to create a strong ensemble.
-    3. Stacking: Train a meta-model to combine the predictions of multiple base models.
-    4. Aggregate Methods: Combine models using techniques like voting, averaging, or weighted averaging.
-
-    Some popular ensemble learning algorithms include:
-
-    - Random Forests
-    - Gradient Boosting Machines (GBMs)
-    - AdaBoost
-    - XGBoost
-    - LightGBM
-    - CatBoost
+     1. Bagging (Bootstrap Aggregating): Combine multiple models trained on different subsets of data.
+     2. Boosting: Train models sequentially, focusing on misclassified instances.
+         - Gradient Boosted Decision Trees: Train decision trees sequentially.
+         - XGBoost: Optimized implementation of Gradient Boosting.
+         - LightGBM: Fast and efficient implementation of Gradient Boosting.
+         - CatBoost: Gradient boosting with categorical feature support.
+     3. Stacking: Train a meta-model to combine predictions from multiple base models.
+     4. Voting: Combine predictions from multiple models using voting schemes.
 
     Ensemble learning offers a powerful approach to improving machine learning model performance. By combining multiple models, you can create more accurate, robust, and generalizable predictions.
 
@@ -1826,34 +1837,108 @@ Area Under the ROC Curve (AUC): A measure of the model's ability to distinguish 
 
     1. Bootstrap Aggregating (Bagging): Combine multiple instances of the same model, trained on different subsets of the data.
     2. Random Forest: An extension of Bagging, using decision trees as base models.
+    3. Characteristics:
+        - Base learners are generated in parallel.
+        - Multiple estimators/models are built independently.
+        - Average predictions to reduce variance.
+        - Variance reduction: 1/n (n = number of models/samples).
 
 ### Sequential Ensemble Methods
 
     Sequential Ensemble Methods
 
-    1. Gradient Boosted Decision Trees: Train decision trees sequentially, focusing on misclassified instances.
-        - XGBoost: An optimized implementation of Gradient Boosting.
-        - LightGBM: A fast and efficient implementation of Gradient Boosting.
-        - CatBoost: A gradient boosting library with categorical feature support.
-    2. ADA Boost: Train models sequentially, adjusting weights to focus on misclassified instances.
-    3. Voting: Combine predictions from multiple models using voting schemes.
+    1. Gradient Boosted Decision Trees (GBDT): Train decision trees sequentially, focusing on misclassified instances.
+    2. XG Boost: Optimized implementation of Gradient Boosting.
+    3. Ada Boost: Train models sequentially, adjusting weights to focus on misclassified instances.
+    4. Light GBM: Fast and efficient implementation of Gradient Boosting.
+    5. Cat Boost: Gradient boosting with categorical feature support.
+    6. Characteristics:
+        - Base learners are generated sequentially.
+        - Boost overall performance by weighing mislabeled examples.
+        - Reduce bias of combined estimator.
 
 #### Ensemble Learning Techniques
 
-Ensemble Learning Techniques
+##### Parallel Ensemble Method
 
-    Ensemble - Sequential Sequence
+    Bagging
 
-    1. Stacking: Train a meta-model to combine predictions from multiple base models.
-    2. Voting: Combine predictions from multiple models using voting schemes.
-    3. Averaging: Combine predictions from multiple models using averaging techniques.
-    4. Weighted Average: Combine predictions from multiple models using weighted averaging techniques.
+    1. Bootstrap Aggregation: Combine multiple estimates to reduce variance.
+    2. Bootstrap Sampling: Random sub-samples of the dataset, with replacement.
+    3. Model Generation: Same algorithm, different bootstrap samples.
+    4. Variance Reduction: Average multiple models.
+    5. Applicable to: Regression (mean) and Classification (voting).
 
-    Some key benefits of ensemble methods include:
+![Simple Bagging Ensemble](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Simple_Bagging_Ensemble_Voting.png)
 
-    - Improved accuracy and robustness
-    - Reduced overfitting and variance
-    - Handling complex data and non-linear relationships
-    - Providing a more comprehensive understanding of the data
+![Parallel Ensemble Bagging](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Parallel_ensemble_Bagging.png)
 
-    By combining multiple models, ensemble methods can produce more accurate and reliable predictions, making them a powerful tool in machine learning.
+    Random Forest
+
+    1. Bagging Technique: Random Forest is a type of Bagging.
+    2. Decision Tree Models: Randomly select features for splitting.
+    3. Differentiation: Each tree splits based on different features.
+    4. Model Generation: Multiple decision trees, each trained on a bootstrap sample.
+    5. Prediction: Combine predictions from all trees.
+
+![Random Forest Working](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/RF_Working_Fig.png)
+![Majority Voting in Random Forrest](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Majority_Voting_RF_Fig.png)
+![Testing in Random Forrest](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Testing_RF_Fig.png)
+![Regressor Out In Random Forrest](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Regressor_Out_RF_Fig.png)
+
+    Example: Binary Classification
+
+    6. Multiple Models: Train multiple decision trees on bootstrap samples.
+    7. Prediction: Each model predicts 0 or 1.
+    8. Voting: Combine predictions; majority vote wins.
+
+##### Sequential Ensemble Method
+
+![Booting](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Boosting_Fig.png)
+
+     - Boosting: A family of algorithms that convert weak learners to strong learners.
+       - Combine predictions through weighted majority vote (classification) or weighted sum (regression).
+       - Build models sequentially, correcting errors from previous models.
+
+     - Gradient Boosted Decision Trees (GBDT): Uses gradient descent algorithm on decision trees to reduce loss.
+       - Generalizes models by optimizing arbitrary differentiable loss functions.
+       - Builds models sequentially, correcting errors from previous models.
+
+     - XGBoost: An efficient implementation of GBDT.
+       - Regularization: Reduces overfitting.
+       - Parallel Processing: Faster than GBDT.
+       - High Flexibility: Allows custom evaluation criteria.
+       - Handling Missing Values: Can handle missing values.
+       - Tree Pruning: Reduces variance.
+       - Built-in Cross-Validation: Allows cross-validation at each iteration.
+
+![Ada Boost](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/ADABOOST_Fig.png)
+
+     - AdaBoost: A boosting algorithm that uses decision stumps.
+       - Assigns weights to classifiers based on accuracy.
+       - Iteratively trains models, selecting training sets based on accurate predictions.
+       - Assigns higher weights to misclassified observations.
+
+![Voting](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Voting_Fig.png)
+
+     - Voting: A technique that combines predictions from multiple models.
+       - Can be used for classification or regression.
+       - Regression: Averages predictions from contributing models.
+       - Classification: Predicts the label with the majority vote.
+
+#### Stacking Ensemble Method
+
+![Stacking](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Stacking_Fig.png)
+
+1. Definition: Stacking is an ensemble learning technique that combines multiple classification or regression models via a meta-classifier or meta-regressor.
+2. Base-Level Models: Trained on the complete training set.
+3. Meta-Model: Trained on the outputs of the base-level models as features.
+4. Meta-Model's Role: Learns to optimally combine the base model predictions.
+5. Aggregation Techniques:
+    1. Simple averaging
+    2. Weighted averaging
+    3. Training another machine learning model (e.g., linear regression, neural network)
+
+### Simple Vs Parallel Vs Sequential
+
+![Single Vs Parallel Vs Sequential](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/S_P_S_Fig.png)
