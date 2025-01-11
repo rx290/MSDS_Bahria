@@ -1774,7 +1774,7 @@ Area Under the ROC Curve (AUC): A measure of the model's ability to distinguish 
 
 ### What, why, when?
 
-![Ensemble Learning](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Ensemble-Learning.png)
+![Ensemble Learning](https://github.com/rx290/MSDS_Bahria/blob/main/Second_Semester/Ensemble_Learning.png)
 
     What is Ensemble Learning?
     Ensemble learning combines multiple machine learning models to improve predictive performance, robustness, and generalizability.
