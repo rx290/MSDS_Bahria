@@ -1136,23 +1136,23 @@ There are several choices to be made when implementing the Perceptron learning a
     Mind Map:
 
           +---------------+
-  |  ELU         |
-  |  Activation    |
-  |  Function      |
-  +---------------+
-          |
-          |
-          v
-  +---------------+---------------+
-  |               |               |
-  |  Definition   |  Mathematical  |
-  |               |  Representation |
-  +---------------+---------------+
+          |  ELU          |
+          |  Activation   |
+          |  Function     |
+          +---------------+
+                   |
+                   |
+                   v
+  +----------------+-----------------+
+  |                |                 |
+  |  Definition    |  Mathematical   |
+  |                |  Representation |
+  +----------------+-----------------+
           |               |
           |               |
           v               v
   +---------------+   +---------------+
-  |  f(x) = x if x|   |  α*(e^x - 1) |
+  |  f(x) = x if x|   |  α*(e^x - 1)  |
   |  ≥ 0, α*(e^x -|   |               |
   |  1) if x < 0  |   |               |
   +---------------+   +---------------+
@@ -1161,29 +1161,29 @@ There are several choices to be made when implementing the Perceptron learning a
           v               v
   +---------------+---------------+
   |               |               |
-  |  Properties   |  Advantages    |
+  |  Properties   |  Advantages   |
   +---------------+---------------+
           |               |
           |               |
           v               v
-  +---------------+   +---------------+
-  |  Range: (-∞, ∞)|   |  Smooth and    |
-  |               |   |  differentiable|
-  +---------------+   +---------------+
+  +----------------+   +-----------------+
+  |  Range: (-∞, ∞)|   |  Smooth and     |
+  |                |   |  differentiable |
+  +----------------+   +-----------------+
           |               |
           |               |
           v               v
-  +---------------+---------------+
-  |               |               |
-  |  Disadvantages|  Applications  |
-  +---------------+---------------+
+  +----------------+----------------+
+  |                |                |
+  |  Disadvantages |  Applications  |
+  +----------------+----------------+
           |               |
           |               |
           v               v
-  +---------------+   +---------------+
-  |  Computationally|   |  Deep neural  |
-  |  expensive     |   |  networks      |
-  +---------------+   +---------------+
+  +------------------+   +---------------+
+  |  Computationally |   |  Deep neural  |
+  |  expensive       |   |  networks     |
+  +------------------+   +---------------+
 
 ### Activation Function Mind Map
 
