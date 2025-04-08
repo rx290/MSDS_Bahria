@@ -113,9 +113,115 @@
         2000s: rich structural formalisms
         2010s: representation learning with Neural Nets
 
-## Lecture 2
+## Lecture 2 and 3
 
-## Lecture 3
+    Eliza Application
+        - ELIZA is an early natural language processing system that simulates a conversation with a user.
+        - It imitates the responses of a Rogerian psychotherapist.
+        - ELIZA uses pattern matching to recognize phrases and generate suitable outputs.
+        - The program's simplicity and mimicry of human conversation led many to believe it truly understood their problems.
+
+
+    Regular Expressions
+        - Regular expressions (RE) are patterns used to match and manipulate text.
+        - RE can be used to search, validate, and extract data from text.
+
+        Anchors
+          - ^ matches the start of a line or string.
+          - $ matches the end of a line or string.
+          - \b matches a word boundary (space, punctuation, or start/end of string).
+          - \B matches a non-boundary (not a space, punctuation, or start/end of string).
+
+        Quantifiers
+          - {n} matches exactly n occurrences of the previous character or expression.
+          - {n, m} matches at least n and at most m occurrences.
+          - {n,} matches at least n occurrences.
+          - * matches zero or more occurrences.
+          - + matches one or more occurrences.
+          - ? matches zero or one occurrence.
+
+
+        Character Classes
+          - [abc] matches any character in the set (e.g., "a", "b", or "c").
+          - [^abc] matches any character not in the set (e.g., not "a", "b", or "c").
+          - [a-zA-Z] matches any character in the range (e.g., any letter).
+          - \w matches any word character (alphanumeric plus underscore).
+          - \W matches any non-word character.
+          - \d matches any digit.
+          - \D matches any non-digit.
+          - \s matches any whitespace character (space, tab, newline).
+          - \S matches any non-whitespace character.
+
+
+        Groups and Alternation
+          - ( ) groups characters or expressions for capturing or alternation.
+          - | matches either the expression before or after the pipe.
+
+        Special Characters
+          - . matches any single character (except newline).
+          - ? matches the preceding element zero or one time.
+          - ! is not a special character in regex, but can be used in negative lookahead/lookbehind assertions.
+          - \ is used to escape special characters or to denote special sequences (e.g., \n, \t).
+          - ( and ) are used to group characters or expressions.
+          - [ and ] are used to define character classes.
+          - { and } are used to define quantifiers.
+
+        Escape Sequences
+            - \n matches a newline character.
+            - \t matches a tab character.
+            - \r matches a carriage return character.
+            - \f matches a form feed character.
+            - \v matches a vertical tab character.
+            - \\ matches a backslash character.
+            - \" matches a double quote character.
+            - \' matches a single quote character.
+
+        Logical Operators
+            - | (pipe) is used for alternation (OR).
+            - (?=pattern) is a positive lookahead assertion (AND).
+            - (?!pattern) is a negative lookahead assertion (NOT).
+            - (?<=pattern) is a positive lookbehind assertion (AND).
+            - (?<!pattern) is a negative lookbehind assertion (NOT).
+
+        Errors
+            - False positives (Type I): matching strings that should not be matched.
+            - False negatives (Type II): not matching strings that should be matched.
+            - Reducing error rates involves increasing accuracy (precision) and coverage (recall).
+
+        Substitutions
+          - To do substitutions, put parentheses ( ) around the first pattern and use the number operator \1 in the second pattern to refer back.
+          - Example: s/([0-9]+)/<\1>/ will match and replace any sequence of digits with the same sequence surrounded by < and >.
+
+        ELIZA Example
+          - ELIZA is a simple chatbot that uses regular expressions to respond to user input.
+          - ELIZA works by having a series of regular expression substitutions that match and change parts of the input lines.
+
+        ELIZA Substitutions
+          - The first substitutions change all instances of "my" to "YOUR", and "I'm" to "YOU ARE", and so on.
+          - Example substitutions:
+              - s/.* all .*/IN WHAT WAY/
+              - s/.* always .*/CAN YOU THINK OF A SPECIFIC EXAMPLE/
+              - s/.* I’[mM] (depressed|sad) .*/I AM SORRY TO HEAR YOU ARE \1/
+              - s/.* I AM (depressed|sad) .*/WHY DO YOU THINK YOU ARE \1/
+
+        Capture Groups
+          - Capture groups are used to capture parts of the input text that can be referenced later in the substitution.
+          - Example: s/(my|your) friend made (me|you) come here/\1 friend made \2 come here/
+          - This substitution captures the words "my" or "your" and "me" or "you" and references them later in the substitution.
+
+        Lookahead
+          - Lookahead is a feature of regular expressions that allows you to check if a pattern matches without advancing the match cursor.
+          - There are two types of lookahead: positive lookahead and negative lookahead.
+          - Positive lookahead: (?=pattern)
+          - Negative lookahead: (?!pattern)
+
+        Negative Lookahead Example
+          - Example: /(^?!Volcano)[A-Za-z]+/
+          - This regular expression matches any single word that doesn't start with "Volcano" at the beginning of a line.
+
+    Text Normalization
+
+    Edit Distances
 
 ## Lecture 4
 
