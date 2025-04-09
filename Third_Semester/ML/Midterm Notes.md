@@ -139,6 +139,139 @@
 
 ## Lecture 2
 
+### Model Life Cycle
+
+    Model development is a 7 step process that is as follows:
+        1. Data Collection
+        2. Preprocessing Data
+        3. ML Algorithm Selection
+        4. Model Training
+        5. Model Evaluation
+        6. Model Testing
+        7. Model Deployment
+
+#### Data Collection
+
+    Dataset: 
+
+    Types of datasets:
+            1. Training Dataset
+            2. Validation Dataset
+            3. Test Set
+            4. Numerical Dataset
+            5. Categorical Dataset
+            6. Image Dataset
+            7. Ordered Dataset
+            8. Partitioned Dataset
+
+    Dataset Sources:
+        1. Online Repositories: Kaggle, UCI etc
+        2. Government Agencies
+        3. Research Institutes
+        4. Novel Dataset Constructions
+
+#### Preprocessing Data
+
+    Data Cleaning:
+        Handling missing values: Identifying and addressing missing data points to ensure accurate analysis.
+           - Methods: Imputation, interpolation, deletion, or replacement.
+
+        Correcting Errors: Identifying and correcting errors in data, such as formatting issues or invalid entries.
+           - Methods: Data validation, data scrubbing, or manual correction.
+
+
+
+    Data Transformation:
+        Normalization: Scaling numeric data to a common range to improve model performance.
+           - Methods: Min-max scaling, standardization, or log transformation.
+
+        Feature Engineering:
+            Creating new features from existing ones to improve model performance.
+             - Methods: Feature extraction, feature construction, or feature selection.
+        Feature Encoding:
+            Converting categorical variables into numerical representations.
+             - Methods: One-hot encoding, label encoding, or binary encoding.
+
+
+    Data Reduction:
+        Feature Selection: Selecting a subset of relevant features to reduce dimensionality.
+           - Methods: Filter methods, wrapper methods, or embedded methods.
+
+        Dimensionality Reduction:  Reducing the number of features while preserving information.
+           - Methods: Principal Component Analysis (PCA), t-SNE, or Autoencoders.
+
+#### Selection of ML algorithm
+
+    Choose an algorithm that fits your problem type (classification, regression, clustering).
+    Experiment with Multiple Models: Try different algorithms and evaluate their performance.
+
+#### Model Training
+
+    Feed preprocessed data into the selected algorithm.
+    Optimize the Model: Use techniques like grid search to tune hyperparameters and improve performance.
+
+#### Model Evaluation
+
+    Classification Metrics
+        Confusion Matrix: A matrix that summarizes the performance of a classification model.
+           - Calculates true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN) instances.
+
+            Confusion Matrix for Binary Classification
+            |                   |  Predicted Dog         |     Predicted Not Dog    |
+            |       ---         |        ---             |            ---           |
+            | Actual Dog        | True Positive (TP)     |  False Negative (FN)     |
+            | Actual Not Dog    | False Positive (FP)    |  True Negative (TN)      |
+
+            Definitions
+            1. True Positive (TP): Both predicted and actual values are Dog.
+            2. True Negative (TN): Both predicted and actual values are Not Dog.
+            3. False Positive (FP): Prediction is Dog, but actual value is Not Dog.
+            4. False Negative (FN): Prediction is Not Dog, but actual value is Dog.
+
+    Evaluation Metrics
+        1. Accuracy: Measures the performance of the model.
+            - Formula: Accuracy = (TP + TN) / (TP + TN + FP + FN)
+            - Example: Accuracy = (5+3)/(5+3+1+1) = 8/10 = 0.8
+        
+        2. Precision: Measures the accuracy of positive predictions.
+            - Formula: Precision = TP / (TP + FP)
+            - Example: Precision = 5/(5+1) = 5/6 = 0.8333
+        
+        3. Recall: Measures the ratio of true positives to the sum of true positives and false negatives.
+            - Formula: Recall = TP / (TP + FN)
+            - Example: Recall = 5/(5+1) = 5/6 = 0.8333
+        
+        4. F1-Score: Evaluates the overall performance of a classification model.
+            - Formula: F1-Score = (2 * Precision * Recall) / (Precision + Recall)
+            - Example: F1-Score = (2 * 0.8333 * 0.8333) / (0.8333 + 0.8333) = 0.8333
+        
+        5. Specificity: Measures the ability of a model to correctly identify negative instances.
+            - Formula: Specificity = TN / (TN + FP)
+            - Example: Specificity = 3/(1+3) = 3/4 = 0.75
+
+    Model Cross-Validation Methods
+        1. K-Fold Cross-Validation:
+            - Divide the dataset into k equal-sized folds.
+            - Train the model on k-1 folds and evaluate on the remaining fold.
+            - Repeat k times, using each fold for validation once.
+            - Average the performance metrics across all iterations.
+            - Example (k=5): Consider 10 data points: {1,2,3,4,5,6,7,8,9,10} divided into 5 folds.
+        
+        2. Leave-One-Out Cross-Validation:
+            - A special case of k-fold cross-validation where k equals the number of samples in the dataset.
+            - Leave one sample out for validation in each iteration.
+            - Train the model on the remaining samples and evaluate on the left-out sample.
+            - Repeat for all samples.
+            - Example: Dataset: {1,2,3,4,5}
+        
+        3. Hold-Out Validation:
+            - Divide the dataset into two sets: Training set (used to train the model) and Test set (used to evaluate the model).
+            - Example: Imagine we have 10 data points: 80% Training Set: {1,2,3,4,5,6,7,8} and 20% Test Set: {9,10}
+
+#### Model Testing
+
+#### Model Deployment
+
 ## Lecture 3
 
 ## Lecture 4
