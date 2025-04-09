@@ -293,6 +293,8 @@
        3. Margin: The distance between the hyperplane and support vectors.
        4. Maximum Margin: The distance between support vectors.
 
+        ![alt text](image-3.png)
+
     Types of SVM
        1. Linear SVM: Used for linearly separable data, where a single straight line can classify the data.
        2. Non-Linear SVM: Used for non-linearly separated data, where a straight line cannot classify the data.
@@ -370,5 +372,51 @@
            3. Sensitive to the scale of features: The performance of SVM can be affected by the scale of the features. Normalization or standardization can help mitigate this issue.
 
 ## Lecture 4
+
+    Introduction to Decision Trees
+       1. Definition: A type of supervised learning algorithm used in machine learning to design a model and predict outcomes.
+       2. Tree-like Structure: Each internal node tests on an attribute/feature, each branch corresponds to an attribute value, and each leaf node represents the final decision or prediction.
+       3. Used for: Both regression and classification problems.
+
+    Basic Terms in Decision Trees
+       1. Root Node: The starting/first node of the tree, representing the initial decision.
+       2. Splitting: The process of dividing a node into two or more sub-nodes.
+       3. Decision Node: When a sub-node splits into further sub-nodes.
+       4. Leaf/Terminal Node: Nodes that do not split.
+       5. Pruning: Removing sub-nodes of a decision node.
+       6. Branch/Sub-Tree: A subsection of the entire tree.
+
+    How Decision Trees Work
+       1. Training Set: The whole training set is considered as the root.
+       2. Feature Values: Preferred to be categorical, but can be continuous and discretized prior to building the model.
+       3. Discretization: Converting continuous data into discrete categories.
+       4. Records Distribution: Distributed recursively on the basis of attribute values.
+
+    Attribute Selection Measures
+       1. Attribute Selection Measure (ASM): A technique to select the best attribute for the nodes of the tree.
+       2. Entropy: A metric to measure the impurity in a given attribute.
+       3. Information Gain (IG): Measures the reduction in entropy after a dataset is split on a particular feature.
+
+    Steps to Build a Decision Tree
+       1. Calculate Entropy: Calculate the entropy of the dataset.
+       2. Calculate Information Gain: Calculate the information gain for each attribute.
+       3. Choose the Best Attribute: Choose the attribute with the highest information gain as the root node.
+       4. Split the Dataset: Split the dataset on the chosen attribute.
+       5. Repeat the Process: Repeat the process for each subset of the dataset.
+
+    Pros and Cons of Decision Trees
+        Pros:
+
+           1. Easy to Understand and Interpret: Decision trees are easy to understand and interpret, making them accessible to non-experts.
+           2. Handle Both Numerical and Categorical Data: Decision trees can handle both numerical and categorical data without requiring extensive preprocessing.
+           3. Provides Insights into Feature Importance: Decision trees provide insights into feature importance for decision-making.
+           4. Applicable to Both Classification and Regression Tasks: Decision trees can be used for both classification and regression tasks.
+
+        Cons:
+
+           5. Potential for Overfitting: Decision trees can suffer from overfitting, especially when the trees are deep.
+           6. Sensitivity to Small Changes in Data: Decision trees can be sensitive to small changes in the data.
+           7. Limited Generalization: Decision trees can have limited generalization if the training data is not representative.
+           8. Potential Bias in the Presence of Imbalanced Data: Decision trees can be biased in the presence of imbalanced data.
 
 ## Lecture 5
