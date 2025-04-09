@@ -420,3 +420,48 @@
            8. Potential Bias in the Presence of Imbalanced Data: Decision trees can be biased in the presence of imbalanced data.
 
 ## Lecture 5
+
+    Introduction to Random Forest
+       1. Definition: A popular machine learning algorithm that belongs to the supervised learning category.
+       2. Ensemble Learning: Combines multiple classifiers to solve a complex problem.
+       3. Used for: Both regression and classification problems.
+
+    How Random Forest Works
+       1. Select Random Data Points: Select random K data points from the training set.
+       2. Build Decision Trees: Build decision trees associated with the selected data points (subsets).
+       3. Choose Number of Trees: Choose the number N for decision trees that you want to build.
+       4. Repeat Steps: Repeat steps 1 and 2.
+       5. Predictions: For new data points, find the predictions of each decision tree, and assign the new data points to the category that wins the majority votes.
+
+    Hyperparameters in Random Forest
+       1. n_estimators: Number of trees the algorithm builds before averaging the predictions.
+       2. max_features: Maximum number of features random forest considers splitting a node.
+       3. min_sample_leaf: Determines the minimum number of leaves required to split an internal node.
+       4. criterion: How to split the node in each tree (Entropy/Gini impurity).
+       5. max_leaf_nodes: Maximum leaf nodes in each tree.
+       6. n_jobs: Tells the engine how many processors it is allowed to use.
+       7. random_state: Controls randomness of the sample.
+       8. oob_score: Out-of-bag score, a random forest cross-validation method.
+
+    Ensemble Learning
+       1. Definition: Combining multiple models to improve performance.
+       2. Types: Bagging and Boosting.
+       3. Bagging: Multiple weak models are trained on different subsets of the training data in parallel, and their predictions are averaged or voted.
+       4. Boosting: Multiple models are trained sequentially, with each model focusing on correcting the errors of the previous models.
+
+    Features of Random Forest
+       1. Diversity: Each decision tree in the RF is built from a different subset of data and features.
+       2. Robustness: By averaging the results from multiple trees, RF improves the performance of the predictions.
+       3. Handling of Missing Values: It can handle missing values internally by averaging results from other trees.
+       4. Feature Importance: It provides insights into the importance of each feature in the prediction process.
+       5. Scalability: RF can be parallelized because each tree is built independently of the others.
+       6. Versatility: It can be used for both classification and regression tasks.
+
+    Feature Selection with Random Forests
+       1. Can be used for feature selection process: Used to rank the importance of features in a classification problem.
+       2. Identify most relevant features: Can help identify the most relevant features, which can improve its performance.
+
+    Difference Between Decision Tree and Random Forest
+       1. Overfitting: Decision trees suffer from overfitting, while random forests do not.
+       2. Computation Speed: Decision trees are faster in computation, while random forests are slower.
+       3. Prediction Method: Decision trees formulate rules to make predictions, while random forests randomly select observations, build a decision tree, and take the average result.
