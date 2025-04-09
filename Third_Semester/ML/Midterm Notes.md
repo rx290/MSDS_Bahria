@@ -270,9 +270,104 @@
 
 #### Model Testing
 
+    1. Evaluation with Unseen/Testing Dataset: Tests the model's performance on new, unseen data.
+    2. Determines Generalization Power: Assesses the model's ability to generalize to new data.
+    3. Overall Model Performance: Provides an overall measure of the model's performance.
+
 #### Model Deployment
 
+    1. Handling High User Loads: Ensures the system can handle a large number of users.
+    2. Smooth Operation: Ensures the system operates smoothly without crashes or hangs.
+    3. Easy Updates: Ensures the system can be easily updated and maintained.
+
 ## Lecture 3
+
+    Support Vector Machine (SVM)
+       1. Definition: A supervised machine learning algorithm used for classification problems.
+       2. Proposed by: Vapnik in 1960, widely recognized in 1990, and modern formulation published in 1992.
+       3. Main Goal: Find a hyperplane that classifies data points into categories/classes.
+
+    Key Concepts
+       1. Hyperplane: A decision boundary that separates data points into different classes.
+       2. Support Vectors: Data points that lie closest to the hyperplane, defining the margin around it.
+       3. Margin: The distance between the hyperplane and support vectors.
+       4. Maximum Margin: The distance between support vectors.
+
+    Types of SVM
+       1. Linear SVM: Used for linearly separable data, where a single straight line can classify the data.
+       2. Non-Linear SVM: Used for non-linearly separated data, where a straight line cannot classify the data.
+
+    Applications
+       1. Spam Detection: Classifying emails as spam or not spam.
+       2. Cancer Detection: Classifying tumors as malignant or benign.
+
+    How SVM Works
+       1. Maximizing the Margin: SVM focuses on maximizing the distance between the hyperplane and support vectors.
+       2. Effective for High-Dimensional Data: SVM is effective for high-dimensional data due to its ability to maximize the margin.
+
+    Linear SVM
+       1. Goal: Find the best hyperplane that separates the data points into different classes.
+       2. Best Hyperplane: The hyperplane with the maximum distance from both classes.
+
+    How SVM Classifies a New Sample
+       1. Assume a Point: Consider a random point X and determine whether it lies on the right or left side of the hyperplane.
+       2. Vector Projection: Project the X vector onto the w vector (perpendicular to the hyperplane).
+       3. Dot Product: Calculate the dot product of X and w vectors.
+       4. Decision Rule: If the dot product is:
+           - Greater than 'c', the point lies on the right side.
+           - Less than 'c', the point lies on the left side.
+           - Equal to 'c', the point lies on the decision boundary.
+
+    Hyperplane Equation
+       1. Hyperplane Equation: w.x + b = 0
+       2. w: Normal vector (perpendicular) to the hyperplane.
+       3. x: Input vector (point in space).
+       4. b: Offset or bias term (distance of the hyperplane from the origin along the normal vector w).
+
+    Decision Rule
+       1. Hard Margin: A hyperplane that properly separates the data points of different categories without any misclassifications.
+       2. Soft Margin: When the data is not perfectly separable, SVM permits a soft margin technique, allowing certain misclassifications or violations.
+
+
+    Non-Linear SVM
+       1. Non-Linear Data: Data that cannot be separated by a single straight line.
+       2. Transformation to High-Dimensional Space: Non-linear SVM transforms the data to a higher-dimensional space using kernel functions.
+
+    Kernel Functions
+       1. Linear: Used for linear classification.
+       2. Radial Basis Function (RBF): Used for non-linear classification.
+       3. Sigmoid: Used for non-linear classification.
+       4. Polynomial: Used for non-linear classification.
+
+    Hyperparameters
+       1. Kernel Function: Transforms the data to a higher-dimensional space.
+       2. Regularization (C): Controls the trade-off between margin and misclassifications.
+           - Small C: Allows for a wider margin, but may lead to underfitting.
+           - Large C: Aims to classify all training points correctly, but may lead to overfitting.
+       3. Gamma (γ): Controls the influence of individual data points on the decision boundary.
+           - Small γ: Means the model has a large influence area, making the decision boundary smoother.
+           - Large γ: Means the model is more sensitive to individual data points, potentially leading to overfitting.
+
+    Choosing the Right Hyperparameters
+       1. Grid Search: Manually specifying a grid of hyperparameter values and evaluating the model's performance for each combination.
+       2. Random Search: Randomly sampling hyperparameter values and evaluating the model's performance.
+
+    Common Problems during Model Training
+       1. Overfitting: When a model is too complex and fits the training data too closely, capturing not just the underlying pattern but also the noise.
+       2. Underfitting: When a model is too simple and cannot capture the underlying patterns in the data.
+
+    Pros and Cons of SVM
+        Pros:
+
+           1. Effective for both linear and non-linear classification: SVM can handle both linearly separable and non-linearly separable data using kernel functions.
+           2. Works well with high-dimensional data: SVM can effectively handle data with many features.
+           3. Can handle both binary and multi-class classification: SVM can be extended to handle multi-class classification problems.
+
+        Cons:
+
+           1. Computationally expensive: SVM can be computationally expensive for large datasets, especially when using kernel functions.
+           2. Choosing the right kernel function: Selecting the appropriate kernel function can be challenging and requires domain knowledge or experimentation.
+           3. Sensitive to the scale of features: The performance of SVM can be affected by the scale of the features. Normalization or standardization can help mitigate this issue.
 
 ## Lecture 4
 
