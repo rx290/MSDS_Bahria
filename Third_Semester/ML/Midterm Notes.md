@@ -2,7 +2,7 @@
 
 ## Lecture 1
 
-    What is machine learning?
+    **What is machine learning?**
     
         Machine Learning is a subset of Artificial Intelligence that is focused on the creation of algorithms.
         It enable a system to learn from data and previous experiences.
@@ -10,15 +10,15 @@
 
    ![Machine Learning Diagram](https://github.com/rx290/MSDS_Bahria/blob/main/Third_Semester/ML/image.png)
 
-    Feature of ML:
+    **Feature of ML**:
         There are several features of Ml that are as follows:
             1. It can detect patterns in a given dataset.
             2. It can learn from previous encounter/data and improve automatically.
             3. It is data-driven Technology.
    
-    Types of ML:
+    **Types of ML**:
         There are 4 Types of ML that are as follows:
-            4. Supervised ML
+            1. Supervised ML
 
                1. Regression
                   1. Linear Regression: Predicts continuous outcomes using linear relationships.
@@ -43,7 +43,7 @@
   
                      5. Random Forest: Classifies data using ensemble decision trees.
 
-            5. Un Supervised ML
+            2. Un-Supervised ML
 
                1. Clustering: Groups similar data points into clusters.
                
@@ -356,7 +356,10 @@
 
     Common Problems during Model Training
        1. Overfitting: When a model is too complex and fits the training data too closely, capturing not just the underlying pattern but also the noise.
+            Overfitting: Model performs well on training data but poorly on generalized data.
+
        2. Underfitting: When a model is too simple and cannot capture the underlying patterns in the data.
+            Underfitting: Model performs poorly on both training data and generalized data.
 
     Pros and Cons of SVM
         Pros:
@@ -367,9 +370,9 @@
 
         Cons:
 
-           1. Computationally expensive: SVM can be computationally expensive for large datasets, especially when using kernel functions.
-           2. Choosing the right kernel function: Selecting the appropriate kernel function can be challenging and requires domain knowledge or experimentation.
-           3. Sensitive to the scale of features: The performance of SVM can be affected by the scale of the features. Normalization or standardization can help mitigate this issue.
+           4. Computationally expensive: SVM can be computationally expensive for large datasets, especially when using kernel functions.
+           5. Choosing the right kernel function: Selecting the appropriate kernel function can be challenging and requires domain knowledge or experimentation.
+           6. Sensitive to the scale of features: The performance of SVM can be affected by the scale of the features. Normalization or standardization can help mitigate this issue.
 
 ## Lecture 4
 
