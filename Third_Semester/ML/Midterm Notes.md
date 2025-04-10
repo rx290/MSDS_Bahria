@@ -8,7 +8,7 @@
         It enable a system to learn from data and previous experiences.
         In a nutshell we create a model, without explicit programming, which aids in making predictions or forecasting.
 
-    ![alt text](image.png)
+    ![Machine Learning Diagram](https://github.com/rx290/MSDS_Bahria/blob/main/Third_Semester/ML/image.png)
 
     Feature of ML:
         There are several features of Ml that are as follows:
@@ -18,7 +18,7 @@
    
     Types of ML:
         There are 4 Types of ML that are as follows:
-            1. Supervised ML
+            4. Supervised ML
 
                1. Regression
                   1. Linear Regression: Predicts continuous outcomes using linear relationships.
@@ -43,7 +43,7 @@
   
                      5. Random Forest: Classifies data using ensemble decision trees.
 
-            2. Un Supervised ML
+            5. Un Supervised ML
 
                1. Clustering: Groups similar data points into clusters.
                
@@ -74,14 +74,14 @@
         Supervised Machine Learning is when Labeled data is provided to the system for training, then based on the labeled training data some predictions are done as an output.
         Then the based on the training data a model is build which is later tested with unknown or fresh raw data to check its capability to accurately predict the correct output/label.
 
-        ![alt text](image-1.png)
+        ![Supervised Machine Learning Diagram](https://github.com/rx290/MSDS_Bahria/blob/main/Third_Semester/ML/image-1.png)
 
 ### Un Supervised ML
 
     How Does Un-Supervised ML Classify?
 
         Un-supervised Machine Learning is when unlabeled data is provided to the system for training, ut has to identify relations and patterns between the provided data and then has to group records/instances/data into the related or similar pattern groups.
-        ![alt text](image-2.png)
+        ![Un-Supervised Machine Learning Diagram](https://github.com/rx290/MSDS_Bahria/blob/main/Third_Semester/ML/image-2.png)
 
 ### SemiSupervised ML
 
@@ -293,7 +293,7 @@
        3. Margin: The distance between the hyperplane and support vectors.
        4. Maximum Margin: The distance between support vectors.
 
-        ![alt text](image-3.png)
+        ![Supervised Machine Learning Diagram](https://github.com/rx290/MSDS_Bahria/blob/main/Third_Semester/ML/image-3.png)
 
     Types of SVM
        1. Linear SVM: Used for linearly separable data, where a single straight line can classify the data.
